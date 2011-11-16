@@ -16,101 +16,24 @@ NavigationInfo {
   avatarSize [0.1, 0.1, 0.1 ]
 }
 Background {
-  topUrl "texture/backgrd.png" 
-  rightUrl "texture/backgrd.png" 
-  leftUrl "texture/backgrd.png" 
-  frontUrl "texture/backgrd2.png" 
-  bottomUrl "texture/backgrd2.png" 
-  backUrl "texture/backgrd2.png" 
-}
-DEF Moon Transform {
-  translation 0 0 33.12
-  rotation 0 1 0 0
-  children Shape {
-    geometry Sphere {
-      radius 0.5
-    }
-    appearance Appearance {
-      texture ImageTexture {
-        url "texture/moonmap_s.jpg" 
-      }
-      material Material {
-        ambientIntensity 1.8
-      }
-    }
-  }
-}
-DEF Mercury Transform {
-  translation 0 0 11.6
-  rotation 0 1 0 0
-  center 6 0 0
-  children Shape {
-    geometry Sphere {
-      radius 0.7
-    }
-    appearance Appearance {
-      texture ImageTexture {
-        url "texture/mercurymap_s.jpg" 
-      }
-      material Material {
-        ambientIntensity 2.5
-      }
-    }
-  }
-}
-DEF Venus Transform {
-  translation 0 0 21.6
-  rotation 0 1 0 0
-  children Shape {
-    geometry Sphere {
-      radius 1.82
-    }
-    appearance Appearance {
-      texture ImageTexture {
-        url "texture/venusmap_s.jpg" 
-      }
-      material Material {
-        ambientIntensity 2.9
-      }
-    }
-  }
-}
-DEF Earth Transform {
-  translation 0 0 30
-  rotation 0 1 0 0
-  children [
-    Shape {
-      geometry Sphere {
-        radius 1.82
-      }
-      appearance Appearance {
-        texture ImageTexture {
-          url "texture/earthmap_s.jpg" 
-        }
-        material Material {
-          shininess 0.9
-          ambientIntensity 2.5
-        }
-      }
-    }
-    DEF EarthView Viewpoint {
-      description "View on Earth"
-      position -2 1.9 5
-      orientation -1 0 0 0.1
-    }
-  ]
+  topUrl "texture/texture__space_by_Mjag.jpg" 
+  rightUrl "texture/texture/texture__space_by_Mjag.jpg" 
+  leftUrl "texture/texture/texture__space_by_Mjag.jpg" 
+  frontUrl "texture/texture/texture__space_by_Mjag.jpg" 
+  bottomUrl "texture/texture/texture__space_by_Mjag.jpg" 
+  backUrl "texture/texture/texture__space_by_Mjag.jpg" 
 }
 DEF Mars Transform {
-  translation 0 0 45.6
   rotation 0 1 0 0
+  bboxSize 1 1 1
   children [
     Shape {
       geometry Sphere {
-        radius 0.91
+        radius 338
       }
       appearance Appearance {
         texture ImageTexture {
-          url "texture/marsmap_s.jpg" 
+          url "texture/mars.jpg" 
         }
         material Material {
           specularColor 0.16 0.16 0.16
@@ -124,45 +47,126 @@ DEF Mars Transform {
       position 0 0 4
       orientation 0 0 0 0.1
     }
-  ]
-}
-DEF Sun Transform {
-  rotation 0 1 0 0
-  children [
-    PointLight {
-      radius 500
-      intensity 6
-      color 1 0.8 0.424456
-      ambientIntensity 0.2
-    }
-    Shape {
-      geometry Sphere {
-        radius 6
-      }
-      appearance Appearance {
-        texture DEF SunTexture ImageTexture {
-          url "texture/solmap_s.jpg" 
-        }
-        material Material {
-          specularColor 1 1 1
-          shininess 0.4
-          emissiveColor 1 1 0
-          diffuseColor 1 1 0.1
-        }
-      }
+    SphereSensor {
     }
   ]
 }
-DEF Ship Transform {
-  translation 0 0 50
+DirectionalLight {
+}
+Transform {
+  translation 0 0 500
   children [
-    Box {
-      size 0.1 0.1 0.1
+    DEF Space_Ship Transform {
+      rotation -90 0 0 1
+      children Transform {
+        children [
+          Transform {
+            scale 1 1 0.2
+            children Shape {
+              geometry Cone {
+              }
+              appearance Appearance {
+                material DEF Material Material {
+                  diffuseColor 0.8 0.493868 0.200569
+                }
+              }
+            }
+          }
+          Transform {
+            translation 0 0.1 0.1
+            scale 0.8 2.1 1
+            children Shape {
+              geometry DEF Sphere Sphere {
+                radius 0.2
+              }
+              appearance Appearance {
+                material DEF Material2 Material {
+                  transparency 0.4
+                  diffuseColor 0.30367 0.295724 0.8
+                }
+              }
+            }
+          }
+          Transform {
+            children Shape {
+              geometry DEF Cone Cone {
+                bottomRadius 0.4
+                bottom FALSE
+              }
+              appearance Appearance {
+                material DEF Material3 Material {
+                  diffuseColor 0.8 0.195698 0.21129
+                }
+              }
+            }
+          }
+          Transform {
+            scale 0.1 0.1 0.1
+            children Transform {
+              translation 0 -4.9 1
+              scale 1 4.8 4.8
+              children Shape {
+                geometry Cone {
+                }
+                appearance Appearance {
+                  material DEF Material4 Material {
+                    diffuseColor 0.0597039 0.200652 0.8
+                  }
+                }
+              }
+            }
+          }
+          Transform {
+            translation 0 0.2 0
+            children Shape {
+              geometry DEF Cylinder Cylinder {
+                radius 0.01
+              }
+              appearance Appearance {
+                material DEF Material5 Material {
+                  diffuseColor 0.139626 0.9 0.0268263
+                }
+              }
+            }
+          }
+          Transform {
+            translation 0 1.2 0
+            children [
+              Transform {
+              }
+              Shape {
+                geometry DEF Sphere1 Sphere {
+                  radius 0.02
+                }
+                appearance Appearance {
+                  material DEF Material6 Material {
+                    diffuseColor 0.8 0.200888 0.0278051
+                  }
+                }
+              }
+            ]
+          }
+          Transform {
+            translation 0 -1 0
+            scaleOrientation 1 -1.40276e-009 2.00693e-008 3.92699
+            scale 0.106487 1.06487 1.06487
+            rotation -0.299618 -0.278456 0.912519 1.62748
+            children Shape {
+              geometry DEF Sphere2 Sphere {
+                radius 0.2
+              }
+              appearance Appearance {
+                material DEF Material7 Material {
+                  diffuseColor 0.8 0.0941893 0.0473841
+                }
+              }
+            }
+          }
+        ]
+      }
     }
     Viewpoint {
       description ""
-      position 0.5 0.5 0.5
-      orientation 0 0 0 0
     }
   ]
 }
