@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.19"
+    ComputedModelVersion    "1.20"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,11 +24,11 @@ Model {
   Creator		  "Artem"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Artem"
+  LastModifiedBy	  "Urzzza"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 16 22:50:30 2011"
-  RTWModifiedTimeStamp	  243374146
-  ModelVersionFormat	  "1.%<AutoIncrement:19>"
+  LastModifiedDate	  "Thu Nov 17 00:04:19 2011"
+  RTWModifiedTimeStamp	  243387808
+  ModelVersionFormat	  "1.%<AutoIncrement:20>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -65,7 +65,6 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "ModelProd"
-    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -73,7 +72,6 @@ Model {
       Cell		      "ModelProd"
       PropName		      "logAsSpecifiedByModels_"
     }
-    logAsSpecifiedByModelsSSIDs_ []
   }
   RecordCoverage	  off
   CovPath		  "/"
@@ -126,7 +124,7 @@ Model {
 	  $ObjectID		  3
 	  Version		  "1.11.0"
 	  StartTime		  "0.0"
-	  StopTime		  "1000"
+	  StopTime		  "inf"
 	  AbsTol		  "auto"
 	  FixedStep		  "auto"
 	  InitialStep		  "auto"
@@ -833,7 +831,7 @@ Model {
   }
   System {
     Name		    "ModelProd"
-    Location		    [337, 242, 1793, 846]
+    Location		    [177, 282, 1616, 886]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -847,13 +845,13 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "153"
+    SIDHighWatermark	    "167"
     Block {
       BlockType		      Reference
       Name		      "Compare\nTo Constant"
       SID		      "139"
       Ports		      [1, 1]
-      Position		      [335, 75, 365, 105]
+      Position		      [420, 155, 450, 185]
       LibraryVersion	      "1.236"
       SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
       SourceType	      "Compare To Constant"
@@ -876,7 +874,27 @@ Model {
       Name		      "Demux"
       SID		      "35"
       Ports		      [1, 3]
-      Position		      [365, 301, 370, 339]
+      Position		      [595, 381, 600, 419]
+      ShowName		      off
+      Outputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux1"
+      SID		      "155"
+      Ports		      [1, 3]
+      Position		      [335, 251, 340, 289]
+      ShowName		      off
+      Outputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
+      BlockType		      Demux
+      Name		      "Demux2"
+      SID		      "162"
+      Ports		      [1, 3]
+      Position		      [575, 251, 580, 289]
       ShowName		      off
       Outputs		      "3"
       DisplayOption	      "bar"
@@ -885,49 +903,49 @@ Model {
       BlockType		      From
       Name		      "From"
       SID		      "119"
-      Position		      [15, 256, 55, 284]
+      Position		      [100, 336, 140, 364]
       GotoTag		      "x"
     }
     Block {
       BlockType		      From
       Name		      "From1"
       SID		      "121"
-      Position		      [15, 306, 55, 334]
+      Position		      [100, 386, 140, 414]
       GotoTag		      "y"
     }
     Block {
       BlockType		      From
       Name		      "From2"
       SID		      "122"
-      Position		      [15, 356, 55, 384]
+      Position		      [100, 436, 140, 464]
       GotoTag		      "z"
     }
     Block {
       BlockType		      From
       Name		      "From3"
       SID		      "132"
-      Position		      [805, 401, 845, 429]
+      Position		      [1035, 481, 1075, 509]
       GotoTag		      "x"
     }
     Block {
       BlockType		      From
       Name		      "From4"
       SID		      "133"
-      Position		      [805, 451, 845, 479]
+      Position		      [1035, 531, 1075, 559]
       GotoTag		      "y"
     }
     Block {
       BlockType		      From
       Name		      "From5"
       SID		      "134"
-      Position		      [805, 501, 845, 529]
+      Position		      [1035, 581, 1075, 609]
       GotoTag		      "z"
     }
     Block {
       BlockType		      Gain
       Name		      "Gain"
       SID		      "136"
-      Position		      [980, 450, 1010, 480]
+      Position		      [1210, 530, 1240, 560]
       Gain		      "1/200000"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -937,7 +955,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto"
       SID		      "125"
-      Position		      [675, 405, 715, 435]
+      Position		      [905, 485, 945, 515]
       GotoTag		      "x"
       TagVisibility	      "local"
     }
@@ -945,7 +963,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto1"
       SID		      "126"
-      Position		      [675, 450, 715, 480]
+      Position		      [905, 530, 945, 560]
       GotoTag		      "y"
       TagVisibility	      "local"
     }
@@ -953,26 +971,16 @@ Model {
       BlockType		      Goto
       Name		      "Goto2"
       SID		      "127"
-      Position		      [675, 495, 715, 525]
+      Position		      [905, 575, 945, 605]
       GotoTag		      "z"
       TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Mux
-      Name		      "Mux1"
-      SID		      "63"
-      Ports		      [3, 1]
-      Position		      [690, 265, 700, 395]
-      ShowName		      off
-      Inputs		      "3"
-      DisplayOption	      "bar"
     }
     Block {
       BlockType		      Mux
       Name		      "Mux2"
       SID		      "120"
       Ports		      [3, 1]
-      Position		      [140, 268, 145, 372]
+      Position		      [225, 348, 230, 452]
       ShowName		      off
       Inputs		      "3"
       DisplayOption	      "bar"
@@ -982,162 +990,23 @@ Model {
       Name		      "Mux3"
       SID		      "135"
       Ports		      [3, 1]
-      Position		      [930, 413, 935, 517]
+      Position		      [1160, 493, 1165, 597]
       ShowName		      off
       Inputs		      "3"
       DisplayOption	      "bar"
     }
     Block {
-      BlockType		      Scope
-      Name		      "Scope1"
-      SID		      "111"
-      Ports		      [1]
-      Position		      [815, 314, 845, 346]
-      Floating		      off
-      Location		      [526, 440, 1580, 1008]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "yonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      SaveName		      "ScopeData1"
-      DataFormat	      "StructureWithTime"
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope2"
-      SID		      "129"
-      Ports		      [1]
-      Position		      [255, 179, 285, 211]
-      Floating		      off
-      Location		      [168, 518, 1222, 1086]
-      Open		      off
-      NumInputPorts	      "1"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      YMin		      "0"
-      YMax		      "2.2e+021"
-      DataFormat	      "StructureWithTime"
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope3"
-      SID		      "130"
-      Ports		      [1]
-      Position		      [365, 154, 395, 186]
-      Floating		      off
-      Location		      [168, 518, 1222, 1086]
-      Open		      off
-      NumInputPorts	      "1"
-      ZoomMode		      "yonly"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      SaveName		      "ScopeData2"
-      DataFormat	      "StructureWithTime"
-      SampleTime	      "0"
-    }
-    Block {
       BlockType		      Stop
       Name		      "Stop Simulation"
       SID		      "138"
-      Position		      [390, 72, 425, 108]
-    }
-    Block {
-      BlockType		      SubSystem
-      Name		      "Subsystem"
-      SID		      "1"
-      Ports		      [1, 1]
-      Position		      [215, 282, 320, 358]
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"Subsystem"
-	Location		[1032, 486, 1530, 786]
-	Open			on
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"A4"
-	PaperUnits		"centimeters"
-	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "pos"
-	  SID			  "4"
-	  Position		  [25, 143, 55, 157]
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Reference
-	  Name			  "Zonal Harmonic Gravity Model"
-	  SID			  "8"
-	  Ports			  [1, 1]
-	  Position		  [120, 111, 345, 189]
-	  LibraryVersion	  "1.444"
-	  SourceBlock		  "aerolibgravity2/Zonal Harmonic Gravity Model"
-	  SourceType		  "Zonal Harmonic Gravity Model"
-	  ShowPortLabels	  "FromPortIcon"
-	  SystemSampleTime	  "-1"
-	  FunctionWithSeparateData off
-	  RTWMemSecFuncInitTerm	  "Inherit from model"
-	  RTWMemSecFuncExecute	  "Inherit from model"
-	  RTWMemSecDataConstants  "Inherit from model"
-	  RTWMemSecDataInternal	  "Inherit from model"
-	  RTWMemSecDataParameters "Inherit from model"
-	  GeneratePreprocessorConditionals off
-	  units			  "Metric (MKS)"
-	  degree		  "3"
-	  action		  "Warning"
-	  ptype			  "Mars"
-	  R			  "3397200"
-	  GM			  "43050000000000"
-	  jvalue		  "[1.9640000e-003 3.6000000e-005]"
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "g"
-	  SID			  "3"
-	  Position		  [445, 143, 475, 157]
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "Zonal Harmonic Gravity Model"
-	  SrcPort		  1
-	  DstBlock		  "g"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "pos"
-	  SrcPort		  1
-	  DstBlock		  "Zonal Harmonic Gravity Model"
-	  DstPort		  1
-	}
-      }
+      Position		      [515, 152, 550, 188]
     }
     Block {
       BlockType		      SubSystem
       Name		      "Subsystem1"
       SID		      "10"
       Ports		      [3, 6]
-      Position		      [505, 262, 615, 533]
+      Position		      [735, 342, 845, 613]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -1147,7 +1016,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem1"
-	Location		[567, 354, 1938, 1099]
+	Location		[175, 255, 1055, 678]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -1211,7 +1080,7 @@ Model {
 	  Ports			  [1, 1]
 	  Position		  [365, 230, 395, 260]
 	  NamePlacement		  "alternate"
-	  InitialCondition	  "5600e3"
+	  InitialCondition	  "-5600e3"
 	}
 	Block {
 	  BlockType		  Integrator
@@ -1420,7 +1289,7 @@ Model {
       Name		      "Subsystem2"
       SID		      "140"
       Ports		      [1, 1]
-      Position		      [185, 52, 290, 128]
+      Position		      [270, 132, 375, 208]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -1431,7 +1300,7 @@ Model {
       System {
 	Name			"Subsystem2"
 	Location		[950, 458, 1448, 758]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1613,64 +1482,118 @@ Model {
 	}
       }
     }
-    Line {
-      SrcBlock		      "Subsystem1"
-      SrcPort		      3
-      DstBlock		      "Mux1"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Subsystem1"
-      SrcPort		      2
-      DstBlock		      "Mux1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Subsystem1"
-      SrcPort		      1
-      DstBlock		      "Mux1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Mux1"
-      SrcPort		      1
-      DstBlock		      "Scope1"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Subsystem"
-      SrcPort		      1
-      Points		      [15, 0]
-      Branch {
-	DstBlock		"Demux"
-	DstPort			1
+    Block {
+      BlockType		      Scope
+      Name		      "Velocity"
+      SID		      "165"
+      Ports		      [3]
+      Position		      [940, 379, 970, 411]
+      Floating		      off
+      Location		      [493, 209, 1547, 777]
+      Open		      off
+      NumInputPorts	      "3"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
       }
-      Branch {
-	Points			[0, -150]
-	DstBlock		"Scope3"
-	DstPort			1
+      YMin		      "-1~2770~0.04925"
+      YMax		      "1~2825~0.05125"
+      SaveName		      "ScopeData1"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Zonal Harmonic Gravity Model"
+      SID		      "154"
+      Ports		      [1, 1]
+      Position		      [305, 361, 530, 439]
+      LibraryVersion	      "1.444"
+      SourceBlock	      "aerolibgravity2/Zonal Harmonic Gravity Model"
+      SourceType	      "Zonal Harmonic Gravity Model"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      units		      "Metric (MKS)"
+      degree		      "3"
+      action		      "Warning"
+      ptype		      "Mars"
+      R			      "3397200"
+      GM		      "43050000000000"
+      jvalue		      "[1.9640000e-003 3.6000000e-005]"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "acceleration"
+      SID		      "163"
+      Ports		      [3]
+      Position		      [645, 254, 675, 286]
+      Floating		      off
+      Location		      [599, 299, 1653, 862]
+      Open		      off
+      NumInputPorts	      "3"
+      ZoomMode		      "yonly"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
       }
+      YMin		      "0~-5~-5"
+      YMax		      "2.2e+021~5~5"
+      SaveName		      "ScopeData3"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
+      Name		      "coordinats"
+      SID		      "129"
+      Ports		      [3]
+      Position		      [405, 254, 435, 286]
+      Floating		      off
+      Location		      [936, 287, 1643, 855]
+      Open		      off
+      NumInputPorts	      "3"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+	axes2			"%<SignalLabel>"
+	axes3			"%<SignalLabel>"
+      }
+      YMin		      "0~-5~-5"
+      YMax		      "2.2e+021~5~5"
+      DataFormat	      "StructureWithTime"
+      SampleTime	      "0"
     }
     Line {
       SrcBlock		      "Mux2"
       SrcPort		      1
       Points		      [10, 0]
       Branch {
-	Points			[25, 0]
-	Branch {
-	  DstBlock		  "Subsystem"
-	  DstPort		  1
-	}
-	Branch {
-	  Points		  [0, -125]
-	  DstBlock		  "Scope2"
-	  DstPort		  1
-	}
-      }
-      Branch {
 	Points			[0, -230]
 	DstBlock		"Subsystem2"
 	DstPort			1
+      }
+      Branch {
+	Points			[15, 0]
+	Branch {
+	  Points		  [0, -130]
+	  DstBlock		  "Demux1"
+	  DstPort		  1
+	}
+	Branch {
+	  DstBlock		  "Zonal Harmonic Gravity Model"
+	  DstPort		  1
+	}
       }
     }
     Line {
@@ -1770,9 +1693,80 @@ Model {
       DstBlock		      "Compare\nTo Constant"
       DstPort		      1
     }
+    Line {
+      SrcBlock		      "Zonal Harmonic Gravity Model"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	Points			[0, -130]
+	DstBlock		"Demux2"
+	DstPort			1
+      }
+      Branch {
+	DstBlock		"Demux"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      1
+      DstBlock		      "coordinats"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      2
+      DstBlock		      "coordinats"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux1"
+      SrcPort		      3
+      DstBlock		      "coordinats"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      1
+      DstBlock		      "acceleration"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      2
+      DstBlock		      "acceleration"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Demux2"
+      SrcPort		      3
+      DstBlock		      "acceleration"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Subsystem1"
+      SrcPort		      1
+      Points		      [35, 0; 0, 20]
+      DstBlock		      "Velocity"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Subsystem1"
+      SrcPort		      2
+      Points		      [35, 0; 0, -15]
+      DstBlock		      "Velocity"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Subsystem1"
+      SrcPort		      3
+      Points		      [75, 0]
+      DstBlock		      "Velocity"
+      DstPort		      3
+    }
     Annotation {
       Name		      "CONNECT MODEL HERE"
-      Position		      [1087, 461]
+      Position		      [1317, 541]
     }
   }
 }
