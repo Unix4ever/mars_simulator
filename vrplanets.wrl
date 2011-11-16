@@ -1,0 +1,168 @@
+#VRML V2.0 utf8
+
+WorldInfo {
+  title "Planets"
+  info ["Copyright 1998-2008 HUMUSOFT s.r.o. and The MathWorks, Inc." "$Revision: 1.1.6.1 $" "$Date: 2008/10/31 07:12:56 $" "$Author: batserve $" ]
+}
+DEF PerspectiveView Viewpoint {
+  description "Perspective view"
+  position 0 15 62.2438
+  orientation -1 0 0 0.349066
+}
+NavigationInfo {
+  visibilityLimit 500
+  type "examine" 
+  headlight FALSE
+  avatarSize [0.1, 0.1, 0.1 ]
+}
+Background {
+  topUrl "texture/backgrd.png" 
+  rightUrl "texture/backgrd.png" 
+  leftUrl "texture/backgrd.png" 
+  frontUrl "texture/backgrd2.png" 
+  bottomUrl "texture/backgrd2.png" 
+  backUrl "texture/backgrd2.png" 
+}
+DEF Moon Transform {
+  translation 0 0 33.12
+  rotation 0 1 0 0
+  children Shape {
+    geometry Sphere {
+      radius 0.5
+    }
+    appearance Appearance {
+      texture ImageTexture {
+        url "texture/moonmap_s.jpg" 
+      }
+      material Material {
+        ambientIntensity 1.8
+      }
+    }
+  }
+}
+DEF Mercury Transform {
+  translation 0 0 11.6
+  rotation 0 1 0 0
+  center 6 0 0
+  children Shape {
+    geometry Sphere {
+      radius 0.7
+    }
+    appearance Appearance {
+      texture ImageTexture {
+        url "texture/mercurymap_s.jpg" 
+      }
+      material Material {
+        ambientIntensity 2.5
+      }
+    }
+  }
+}
+DEF Venus Transform {
+  translation 0 0 21.6
+  rotation 0 1 0 0
+  children Shape {
+    geometry Sphere {
+      radius 1.82
+    }
+    appearance Appearance {
+      texture ImageTexture {
+        url "texture/venusmap_s.jpg" 
+      }
+      material Material {
+        ambientIntensity 2.9
+      }
+    }
+  }
+}
+DEF Earth Transform {
+  translation 0 0 30
+  rotation 0 1 0 0
+  children [
+    Shape {
+      geometry Sphere {
+        radius 1.82
+      }
+      appearance Appearance {
+        texture ImageTexture {
+          url "texture/earthmap_s.jpg" 
+        }
+        material Material {
+          shininess 0.9
+          ambientIntensity 2.5
+        }
+      }
+    }
+    DEF EarthView Viewpoint {
+      description "View on Earth"
+      position -2 1.9 5
+      orientation -1 0 0 0.1
+    }
+  ]
+}
+DEF Mars Transform {
+  translation 0 0 45.6
+  rotation 0 1 0 0
+  children [
+    Shape {
+      geometry Sphere {
+        radius 0.91
+      }
+      appearance Appearance {
+        texture ImageTexture {
+          url "texture/marsmap_s.jpg" 
+        }
+        material Material {
+          specularColor 0.16 0.16 0.16
+          diffuseColor 0 0 0
+          ambientIntensity 2.2
+        }
+      }
+    }
+    DEF MarsView Viewpoint {
+      description "View on Mars"
+      position 0 0 4
+      orientation 0 0 0 0.1
+    }
+  ]
+}
+DEF Sun Transform {
+  rotation 0 1 0 0
+  children [
+    PointLight {
+      radius 500
+      intensity 6
+      color 1 0.8 0.424456
+      ambientIntensity 0.2
+    }
+    Shape {
+      geometry Sphere {
+        radius 6
+      }
+      appearance Appearance {
+        texture DEF SunTexture ImageTexture {
+          url "texture/solmap_s.jpg" 
+        }
+        material Material {
+          specularColor 1 1 1
+          shininess 0.4
+          emissiveColor 1 1 0
+          diffuseColor 1 1 0.1
+        }
+      }
+    }
+  ]
+}
+DEF Ship Transform {
+  translation 0 0 50
+  children [
+    Box {
+      size 0.1 0.1 0.1
+    }
+    Viewpoint {
+      description ""
+      position -0.110289 -0.0190023 0.514445
+      orientation -0.557808 0.438821 -0.704476 0.250849
+    }
+  ]
+}
