@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.36"
+    ComputedModelVersion    "1.66"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -26,9 +26,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Artem"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 17 03:41:28 2011"
+  LastModifiedDate	  "Thu Nov 24 03:56:42 2011"
   RTWModifiedTimeStamp	  243391752
-  ModelVersionFormat	  "1.%<AutoIncrement:36>"
+  ModelVersionFormat	  "1.%<AutoIncrement:66>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -65,7 +65,6 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "ModelProd"
-    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -73,7 +72,6 @@ Model {
       Cell		      "ModelProd"
       PropName		      "logAsSpecifiedByModels_"
     }
-    logAsSpecifiedByModelsSSIDs_ []
   }
   RecordCoverage	  off
   CovPath		  "/"
@@ -864,7 +862,7 @@ Model {
   }
   System {
     Name		    "ModelProd"
-    Location		    [355, 199, 1815, 1051]
+    Location		    [2, 74, 1347, 690]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -878,7 +876,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "269"
+    SIDHighWatermark	    "306"
     Block {
       BlockType		      SubSystem
       Name		      "Atmosphere"
@@ -894,7 +892,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Atmosphere"
-	Location		[63, 242, 864, 679]
+	Location		[535, 301, 1336, 738]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -982,7 +980,7 @@ Model {
 	  g			  "3.72"
 	  gamma			  "2"
 	  R			  "188.92"
-	  L			  "0.0198"
+	  L			  "0.0045"
 	  h_trop		  "25000"
 	  h_strat		  "50000"
 	  rho0			  "0.015"
@@ -1122,7 +1120,7 @@ Model {
       RTWMemSecDataParameters "Inherit from model"
       GeneratePreprocessorConditionals off
       relop		      "<="
-      const		      "3397.2e3"
+      const		      "3395.2e3"
       LogicOutDataTypeMode    "boolean"
       ZeroCross		      on
     }
@@ -1145,7 +1143,14 @@ Model {
       Name		      "Constant2"
       SID		      "255"
       Position		      [230, 610, 260, 640]
-      Value		      "6"
+      Value		      "220"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant4"
+      SID		      "272"
+      Position		      [1160, 705, 1190, 735]
+      Value		      "[255 70 0]"
     }
     Block {
       BlockType		      Demux
@@ -1247,7 +1252,7 @@ Model {
       BlockType		      From
       Name		      "From8"
       SID		      "242"
-      Position		      [1005, 601, 1045, 629]
+      Position		      [1035, 406, 1075, 434]
       GotoTag		      "V"
     }
     Block {
@@ -1371,21 +1376,11 @@ Model {
       DisplayOption	      "bar"
     }
     Block {
-      BlockType		      Mux
-      Name		      "Mux6"
-      SID		      "253"
-      Ports		      [2, 1]
-      Position		      [1160, 606, 1165, 644]
-      ShowName		      off
-      Inputs		      "2"
-      DisplayOption	      "bar"
-    }
-    Block {
       BlockType		      Reference
       Name		      "Normalize Vector"
       SID		      "241"
       Ports		      [1, 1]
-      Position		      [1185, 610, 1260, 640]
+      Position		      [1125, 405, 1200, 435]
       LibraryVersion	      "1.241"
       SourceBlock	      "vrlib/Utilities/Normalize Vector"
       SourceType	      "Normalize Vector"
@@ -1402,50 +1397,12 @@ Model {
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope"
-      SID		      "206"
-      Ports		      [1]
-      Position		      [1275, 364, 1305, 396]
-      Floating		      off
-      Location		      [188, 390, 1064, 845]
-      Open		      off
-      NumInputPorts	      "1"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      SaveName		      "ScopeData2"
-      DataFormat	      "StructureWithTime"
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope1"
-      SID		      "207"
-      Ports		      [1]
-      Position		      [1260, 419, 1290, 451]
-      Floating		      off
-      Location		      [905, 590, 1832, 1171]
-      Open		      off
-      NumInputPorts	      "1"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      YMin		      "-50"
-      YMax		      "600"
-      SaveName		      "ScopeData4"
-      DataFormat	      "StructureWithTime"
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Scope
       Name		      "Scope2"
       SID		      "228"
       Ports		      [1]
       Position		      [515, 514, 545, 546]
       Floating		      off
-      Location		      [516, 579, 1203, 1037]
+      Location		      [364, 211, 1051, 669]
       Open		      off
       NumInputPorts	      "1"
       List {
@@ -1454,24 +1411,26 @@ Model {
       }
       SaveName		      "ScopeData5"
       DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
       SampleTime	      "0"
     }
     Block {
       BlockType		      Scope
       Name		      "Scope3"
-      SID		      "254"
+      SID		      "292"
       Ports		      [1]
-      Position		      [1350, 609, 1380, 641]
+      Position		      [1435, 299, 1465, 331]
       Floating		      off
-      Location		      [188, 390, 1064, 845]
+      Location		      [157, 218, 844, 676]
       Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
       }
-      SaveName		      "ScopeData6"
+      SaveName		      "ScopeData4"
       DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
       SampleTime	      "0"
     }
     Block {
@@ -1481,7 +1440,7 @@ Model {
       Ports		      [1]
       Position		      [440, 619, 470, 651]
       Floating		      off
-      Location		      [87, 432, 963, 887]
+      Location		      [86, 227, 962, 682]
       Open		      off
       NumInputPorts	      "1"
       List {
@@ -1492,6 +1451,7 @@ Model {
       YMax		      "0.5"
       SaveName		      "ScopeData7"
       DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
       SampleTime	      "0"
     }
     Block {
@@ -1515,8 +1475,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem1"
-	Location		[668, 533, 1548, 956]
-	Open			on
+	Location		[120, 247, 1000, 670]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1565,7 +1525,7 @@ Model {
 	  SID			  "20"
 	  Ports			  [1, 1]
 	  Position		  [180, 20, 210, 50]
-	  InitialCondition	  "1360"
+	  InitialCondition	  "-800"
 	}
 	Block {
 	  BlockType		  Integrator
@@ -2034,7 +1994,7 @@ Model {
       Name		      "Subsystem3"
       SID		      "186"
       Ports		      [1]
-      Position		      [990, 342, 1095, 418]
+      Position		      [980, 277, 1085, 353]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -2044,7 +2004,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem3"
-	Location		[540, 542, 1461, 842]
+	Location		[173, 223, 1094, 523]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2139,7 +2099,7 @@ Model {
 	  Ports			  [4]
 	  Position		  [545, 42, 720, 183]
 	  Floating		  off
-	  Location		  [180, 158, 1535, 1104]
+	  Location		  [1, 48, 1367, 727]
 	  Open			  off
 	  NumInputPorts		  "4"
 	  List {
@@ -2300,209 +2260,11 @@ Model {
       }
     }
     Block {
-      BlockType		      SubSystem
-      Name		      "Subsystem4"
-      SID		      "243"
-      Ports		      [1, 1]
-      Position		      [1090, 647, 1125, 683]
-      MinAlgLoopOccurrences   off
-      PropExecContextOutsideSubsystem off
-      RTWSystemCode	      "Auto"
-      FunctionWithSeparateData off
-      Opaque		      off
-      RequestExecContextInheritance off
-      MaskHideContents	      off
-      System {
-	Name			"Subsystem4"
-	Location		[816, 687, 1314, 987]
-	Open			off
-	ModelBrowserVisibility	off
-	ModelBrowserWidth	200
-	ScreenColor		"white"
-	PaperOrientation	"landscape"
-	PaperPositionMode	"auto"
-	PaperType		"A4"
-	PaperUnits		"centimeters"
-	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
-	TiledPageScale		1
-	ShowPageBoundaries	off
-	ZoomFactor		"100"
-	Block {
-	  BlockType		  Inport
-	  Name			  "pos"
-	  SID			  "244"
-	  Position		  [25, 143, 55, 157]
-	  IconDisplay		  "Port number"
-	}
-	Block {
-	  BlockType		  Demux
-	  Name			  "Demux"
-	  SID			  "245"
-	  Ports			  [1, 3]
-	  Position		  [115, 131, 120, 169]
-	  ShowName		  off
-	  Outputs		  "3"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Mux
-	  Name			  "Mux"
-	  SID			  "246"
-	  Ports			  [3, 1]
-	  Position		  [330, 131, 335, 169]
-	  ShowName		  off
-	  Inputs		  "3"
-	  DisplayOption		  "bar"
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "Product"
-	  SID			  "247"
-	  Ports			  [2, 1]
-	  Position		  [240, 97, 270, 128]
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "Product1"
-	  SID			  "248"
-	  Ports			  [2, 1]
-	  Position		  [240, 142, 270, 173]
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Product
-	  Name			  "Product2"
-	  SID			  "249"
-	  Ports			  [2, 1]
-	  Position		  [240, 187, 270, 218]
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Sqrt
-	  Name			  "Sqrt"
-	  SID			  "250"
-	  Position		  [405, 135, 435, 165]
-	}
-	Block {
-	  BlockType		  Sum
-	  Name			  "Sum of\nElements"
-	  SID			  "251"
-	  Ports			  [1, 1]
-	  Position		  [360, 135, 390, 165]
-	  Inputs		  "+"
-	  InputSameDT		  off
-	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
-	  SaturateOnIntegerOverflow off
-	}
-	Block {
-	  BlockType		  Outport
-	  Name			  "g"
-	  SID			  "252"
-	  Position		  [455, 143, 485, 157]
-	  IconDisplay		  "Port number"
-	}
-	Line {
-	  SrcBlock		  "Sqrt"
-	  SrcPort		  1
-	  DstBlock		  "g"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Sum of\nElements"
-	  SrcPort		  1
-	  DstBlock		  "Sqrt"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Mux"
-	  SrcPort		  1
-	  DstBlock		  "Sum of\nElements"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Product2"
-	  SrcPort		  1
-	  Points		  [40, 0]
-	  DstBlock		  "Mux"
-	  DstPort		  3
-	}
-	Line {
-	  SrcBlock		  "Product1"
-	  SrcPort		  1
-	  Points		  [20, 0; 0, -10]
-	  DstBlock		  "Mux"
-	  DstPort		  2
-	}
-	Line {
-	  SrcBlock		  "Product"
-	  SrcPort		  1
-	  Points		  [20, 0; 0, 25]
-	  DstBlock		  "Mux"
-	  DstPort		  1
-	}
-	Line {
-	  SrcBlock		  "Demux"
-	  SrcPort		  3
-	  Points		  [35, 0; 0, 35]
-	  Branch {
-	    Points		    [0, 15]
-	    DstBlock		    "Product2"
-	    DstPort		    2
-	  }
-	  Branch {
-	    DstBlock		    "Product2"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Demux"
-	  SrcPort		  2
-	  Points		  [55, 0]
-	  Branch {
-	    Points		    [0, 15]
-	    DstBlock		    "Product1"
-	    DstPort		    2
-	  }
-	  Branch {
-	    DstBlock		    "Product1"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "Demux"
-	  SrcPort		  1
-	  Points		  [35, 0; 0, -20]
-	  Branch {
-	    DstBlock		    "Product"
-	    DstPort		    2
-	  }
-	  Branch {
-	    Points		    [0, -15]
-	    DstBlock		    "Product"
-	    DstPort		    1
-	  }
-	}
-	Line {
-	  SrcBlock		  "pos"
-	  SrcPort		  1
-	  DstBlock		  "Demux"
-	  DstPort		  1
-	}
-      }
-    }
-    Block {
       BlockType		      Switch
       Name		      "Switch"
       SID		      "256"
       Position		      [295, 640, 345, 680]
-      Threshold		      "-3620e3"
+      Threshold		      "-3490e3"
       InputSameDT	      off
       SaturateOnIntegerOverflow	off
     }
@@ -2511,11 +2273,11 @@ Model {
       Name		      "VR Sink"
       SID		      "205"
       Ports		      [2]
-      Position		      [1295, 485, 1390, 560]
+      Position		      [1580, 480, 1675, 555]
       LibraryVersion	      "1.241"
       SourceBlock	      "vrlib/VR Sink"
       SourceType	      "Virtual Reality Sink"
-      SampleTime	      "0.1"
+      SampleTime	      "3"
       ViewEnable	      on
       RemoteChange	      off
       RemoteView	      on
@@ -2524,6 +2286,45 @@ Model {
       WorldDescription	      "Planets"
       AutoView		      off
       VideoDimensions	      "[]"
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "VR Tracer"
+      SID		      "271"
+      Ports		      [2]
+      Position		      [1285, 691, 1380, 729]
+      LibraryVersion	      "1.241"
+      SourceBlock	      "vrlib/VR Tracer"
+      SourceType	      "VR Tracer"
+      VrmlFile		      "vrplanets.wrl"
+      MarkerName	      "Box"
+      UseLines		      on
+      UseTriads		      off
+      MarkerScale	      "[0.3 0.3 0.3]"
+      MarkerColorSelection    "Block input"
+      MarkerColor	      "red"
+      rgbval		      "[1 0 0]"
+      Ts		      "6"
+      ForceViewerOpen	      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Viewpoint Direction\nto VRML Orientation"
+      SID		      "306"
+      Ports		      [1, 1]
+      Position		      [1245, 401, 1340, 439]
+      LibraryVersion	      "1.241"
+      SourceBlock	      "vrlib/Utilities/Viewpoint Direction\nto VRML Orientation"
+      SourceType	      "Viewpoint Direction to VRML Orientation"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
     }
     Block {
       BlockType		      Reference
@@ -2604,7 +2405,7 @@ Model {
       Ports		      [3]
       Position		      [405, 214, 435, 246]
       Floating		      off
-      Location		      [734, 288, 1441, 856]
+      Location		      [654, 194, 1361, 762]
       Open		      off
       NumInputPorts	      "3"
       List {
@@ -2701,16 +2502,8 @@ Model {
     Line {
       SrcBlock		      "Mux3"
       SrcPort		      1
-      Points		      [20, 0]
-      Branch {
-	DstBlock		"Gain"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, -135]
-	DstBlock		"Scope"
-	DstPort			1
-      }
+      DstBlock		      "Gain"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Zonal Harmonic Gravity Model"
@@ -2812,11 +2605,6 @@ Model {
       SrcPort		      1
       Points		      [70, 0]
       Branch {
-	Points			[0, -45]
-	DstBlock		"Atmosphere"
-	DstPort			1
-      }
-      Branch {
 	Points			[0, 115]
 	Branch {
 	  Points		  [0, 80]
@@ -2827,6 +2615,11 @@ Model {
 	  DstBlock		  "Gain1"
 	  DstPort		  1
 	}
+      }
+      Branch {
+	Points			[0, -45]
+	DstBlock		"Atmosphere"
+	DstPort			1
       }
     }
     Line {
@@ -2859,6 +2652,7 @@ Model {
       SrcPort		      1
       Points		      [20, 0]
       Branch {
+	Points			[30, 0]
 	DstBlock		"Subsystem3"
 	DstPort			1
       }
@@ -2871,13 +2665,13 @@ Model {
     Line {
       SrcBlock		      "Gain"
       SrcPort		      1
-      Points		      [0, 0]
+      Points		      [0, 20]
       Branch {
-	DstBlock		"Scope1"
+	Points			[0, 165]
+	DstBlock		"VR Tracer"
 	DstPort			1
       }
       Branch {
-	Points			[35, 20]
 	DstBlock		"VR Sink"
 	DstPort			2
       }
@@ -2928,47 +2722,6 @@ Model {
       SrcPort		      3
       Points		      [35, 0; 0, 160]
       DstBlock		      "Mux4"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Normalize Vector"
-      SrcPort		      1
-      Points		      [0, -30]
-      Branch {
-	Points			[0, -90]
-	DstBlock		"VR Sink"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 30]
-	DstBlock		"Scope3"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "From8"
-      SrcPort		      1
-      Points		      [25, 0]
-      Branch {
-	DstBlock		"Mux6"
-	DstPort			1
-      }
-      Branch {
-	DstBlock		"Subsystem4"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "Mux6"
-      SrcPort		      1
-      DstBlock		      "Normalize Vector"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Subsystem4"
-      SrcPort		      1
-      Points		      [5, 0; 0, -30]
-      DstBlock		      "Mux6"
       DstPort		      2
     }
     Line {
@@ -3023,6 +2776,39 @@ Model {
       Points		      [30, 0; 0, -35]
       DstBlock		      "acceleration1"
       DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Constant4"
+      SrcPort		      1
+      DstBlock		      "VR Tracer"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From8"
+      SrcPort		      1
+      DstBlock		      "Normalize Vector"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Normalize Vector"
+      SrcPort		      1
+      DstBlock		      "Viewpoint Direction\nto VRML Orientation"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Viewpoint Direction\nto VRML Orientation"
+      SrcPort		      1
+      Points		      [60, 0]
+      Branch {
+	Points			[50, 0; 0, 80]
+	DstBlock		"VR Sink"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -105]
+	DstBlock		"Scope3"
+	DstPort			1
+      }
     }
   }
 }
