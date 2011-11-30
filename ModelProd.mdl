@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.66"
+    ComputedModelVersion    "1.70"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -26,9 +26,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Artem"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 24 03:56:42 2011"
-  RTWModifiedTimeStamp	  243391752
-  ModelVersionFormat	  "1.%<AutoIncrement:66>"
+  LastModifiedDate	  "Thu Nov 24 20:46:15 2011"
+  RTWModifiedTimeStamp	  244041750
+  ModelVersionFormat	  "1.%<AutoIncrement:70>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -65,6 +65,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "ModelProd"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -72,6 +73,7 @@ Model {
       Cell		      "ModelProd"
       PropName		      "logAsSpecifiedByModels_"
     }
+    logAsSpecifiedByModelsSSIDs_ []
   }
   RecordCoverage	  off
   CovPath		  "/"
@@ -862,7 +864,7 @@ Model {
   }
   System {
     Name		    "ModelProd"
-    Location		    [2, 74, 1347, 690]
+    Location		    [0, 50, 1350, 736]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -876,7 +878,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "306"
+    SIDHighWatermark	    "307"
     Block {
       BlockType		      SubSystem
       Name		      "Atmosphere"
@@ -1120,7 +1122,7 @@ Model {
       RTWMemSecDataParameters "Inherit from model"
       GeneratePreprocessorConditionals off
       relop		      "<="
-      const		      "3395.2e3"
+      const		      "3364.5e3"
       LogicOutDataTypeMode    "boolean"
       ZeroCross		      on
     }
@@ -1136,7 +1138,7 @@ Model {
       Name		      "Constant1"
       SID		      "239"
       Position		      [230, 680, 260, 710]
-      Value		      "0.5"
+      Value		      "10"
     }
     Block {
       BlockType		      Constant
@@ -1150,7 +1152,7 @@ Model {
       Name		      "Constant4"
       SID		      "272"
       Position		      [1160, 705, 1190, 735]
-      Value		      "[255 70 0]"
+      Value		      "[0 255 10]"
     }
     Block {
       BlockType		      Demux
@@ -1397,6 +1399,27 @@ Model {
     }
     Block {
       BlockType		      Scope
+      Name		      "Scope1"
+      SID		      "307"
+      Ports		      [1]
+      Position		      [270, 409, 300, 441]
+      Floating		      off
+      Location		      [86, 227, 962, 682]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      YMin		      "0.475"
+      YMax		      "0.525"
+      SaveName		      "ScopeData2"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
       Name		      "Scope2"
       SID		      "228"
       Ports		      [1]
@@ -1447,8 +1470,8 @@ Model {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
       }
-      YMin		      "0.5"
-      YMax		      "0.5"
+      YMin		      "0.475"
+      YMax		      "0.525"
       SaveName		      "ScopeData7"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
@@ -1525,7 +1548,7 @@ Model {
 	  SID			  "20"
 	  Ports			  [1, 1]
 	  Position		  [180, 20, 210, 50]
-	  InitialCondition	  "-800"
+	  InitialCondition	  "1366"
 	}
 	Block {
 	  BlockType		  Integrator
@@ -2099,9 +2122,10 @@ Model {
 	  Ports			  [4]
 	  Position		  [545, 42, 720, 183]
 	  Floating		  off
-	  Location		  [1, 48, 1367, 727]
+	  Location		  [5, 48, 1367, 727]
 	  Open			  off
 	  NumInputPorts		  "4"
+	  ZoomMode		  "yonly"
 	  List {
 	    ListType		    AxesTitles
 	    axes1		    "%<SignalLabel>"
@@ -2277,7 +2301,7 @@ Model {
       LibraryVersion	      "1.241"
       SourceBlock	      "vrlib/VR Sink"
       SourceType	      "Virtual Reality Sink"
-      SampleTime	      "3"
+      SampleTime	      "0.5"
       ViewEnable	      on
       RemoteChange	      off
       RemoteView	      on
@@ -2297,10 +2321,10 @@ Model {
       SourceBlock	      "vrlib/VR Tracer"
       SourceType	      "VR Tracer"
       VrmlFile		      "vrplanets.wrl"
-      MarkerName	      "Box"
+      MarkerName	      "Sphere"
       UseLines		      on
       UseTriads		      off
-      MarkerScale	      "[0.3 0.3 0.3]"
+      MarkerScale	      "[0.1 0.1 0.1]"
       MarkerColorSelection    "Block input"
       MarkerColor	      "red"
       rgbval		      "[1 0 0]"
@@ -2405,7 +2429,7 @@ Model {
       Ports		      [3]
       Position		      [405, 214, 435, 246]
       Floating		      off
-      Location		      [654, 194, 1361, 762]
+      Location		      [152, 123, 859, 691]
       Open		      off
       NumInputPorts	      "3"
       List {
@@ -2618,8 +2642,15 @@ Model {
       }
       Branch {
 	Points			[0, -45]
-	DstBlock		"Atmosphere"
-	DstPort			1
+	Branch {
+	  DstBlock		  "Atmosphere"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, -75]
+	  DstBlock		  "Scope1"
+	  DstPort		  1
+	}
       }
     }
     Line {

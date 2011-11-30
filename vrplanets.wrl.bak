@@ -57,12 +57,16 @@ DEF Ship Transform {
   translation 0 0 500
   rotation 0 0 0 0
   children [
-    Viewpoint {
+    DEF MainView Viewpoint {
+      description ""
+      position 1.09193 0 -2.00299
+      orientation 0 1 0 2.35
     }
     Transform {
+      scale 0.3 0.3 0.3
       children Transform {
         scale 0.3 0.3 0.3
-        rotation -1 0 0 1.5
+        rotation -1 0 0 1.6
         children Inline {
           url "C:/Users/Artem/Documents/MATLAB/mars_simulator/frienship7.wrl" 
         }

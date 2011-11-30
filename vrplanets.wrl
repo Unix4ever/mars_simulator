@@ -6,8 +6,8 @@ WorldInfo {
 }
 DEF PerspectiveView Viewpoint {
   description "Perspective view"
-  position 80.2938 0 503.124
-  orientation 0 1 0 1.03673
+  position 462.431 204.625 62.1891
+  orientation -0.237974 0.97111 -0.0177329 2.30511
 }
 NavigationInfo {
   visibilityLimit 500
@@ -65,7 +65,7 @@ DEF Ship Transform {
       scale 0.3 0.3 0.3
       children Transform {
         scale 0.3 0.3 0.3
-        rotation -1 0 0 1.5
+        rotation -1 0 0 1.6
         children Inline {
           url "C:/Users/Artem/Documents/MATLAB/mars_simulator/frienship7.wrl" 
         }
