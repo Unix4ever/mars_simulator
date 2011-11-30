@@ -44,8 +44,8 @@ DEF Mars Transform {
     }
     DEF MarsView Viewpoint {
       description "View on Mars"
-      position 0 0 4
-      orientation 0 0 0 0.1
+      position 286.697 418.655 -210.934
+      orientation -0.148931 0.938353 0.311951 3.05811
     }
     SphereSensor {
     }
@@ -55,19 +55,23 @@ DirectionalLight {
 }
 DEF Ship Transform {
   translation 0 0 500
+  scale 0.2 0.2 0.2
   rotation 0 0 0 0
   children [
     DEF MainView Viewpoint {
-      position 1.09193 0 -2.00299
-      orientation 0 1 0 2.35
+      description "Main ship view"
+      position 0.0884872 5.51657 -6.25171
+      orientation -0.971912 0.219531 0.0848152 2.40833
+      fieldOfView 0.7854
     }
     Transform {
       scale 0.3 0.3 0.3
+      rotation -1 0 1 0
       children Transform {
-        scale 0.3 0.3 0.3
+        scale 0.01 0.01 0.01
         rotation -1 0 0 1.6
         children Inline {
-          url "C:/Users/Artem/Documents/MATLAB/mars_simulator/frienship7.wrl" 
+          url "C:/Users/Artem/Documents/MATLAB/mars_simulator/spacedish_full.WRL" 
         }
       }
     }
@@ -75,6 +79,18 @@ DEF Ship Transform {
       visibilityRange 1000
       fogType "RADIAL"
       color 0.4 0.5 0.6
+    }
+    Viewpoint {
+      description "Bottom ship view"
+      position 4.34514 -0.733423 1.73588
+      orientation -0.055554 0.934585 -0.351376 1.01
+      fieldOfView 0.7854
+    }
+    Viewpoint {
+      description "Side view"
+      position -24.5808 5.84582 -6.80378
+      orientation -0.200887 -0.97949 0.0156207 2.04792
+      fieldOfView 0.7854
     }
   ]
 }

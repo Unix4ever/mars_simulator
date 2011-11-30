@@ -2384,6 +2384,15 @@ Model {
       SaturateOnIntegerOverflow	off
     }
     Block {
+      BlockType		      Switch
+      Name		      "Switch1"
+      SID		      "308"
+      Position		      [1365, 570, 1415, 610]
+      Threshold		      "-3490e3"
+      InputSameDT	      off
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
       BlockType		      Reference
       Name		      "VR Sink"
       SID		      "205"
