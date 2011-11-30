@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.72"
+    ComputedModelVersion    "1.150"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,11 +24,11 @@ Model {
   Creator		  "Artem"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Urzzza"
+  LastModifiedBy	  "Artem"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Wed Nov 30 23:44:19 2011"
-  RTWModifiedTimeStamp	  244597378
-  ModelVersionFormat	  "1.%<AutoIncrement:72>"
+  LastModifiedDate	  "Thu Dec 01 02:23:41 2011"
+  RTWModifiedTimeStamp	  244605588
+  ModelVersionFormat	  "1.%<AutoIncrement:150>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -65,7 +65,6 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "ModelProd"
-    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -73,7 +72,6 @@ Model {
       Cell		      "ModelProd"
       PropName		      "logAsSpecifiedByModels_"
     }
-    logAsSpecifiedByModelsSSIDs_ []
   }
   RecordCoverage	  off
   CovPath		  "/"
@@ -864,7 +862,7 @@ Model {
   }
   System {
     Name		    "ModelProd"
-    Location		    [2, 74, 1661, 972]
+    Location		    [2, 74, 1347, 690]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -878,7 +876,17 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "335"
+    SIDHighWatermark	    "524"
+    Block {
+      BlockType		      Sum
+      Name		      "Add"
+      SID		      "502"
+      Ports		      [2, 1]
+      Position		      [1535, 762, 1565, 793]
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
     Block {
       BlockType		      SubSystem
       Name		      "Atmosphere"
@@ -894,8 +902,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Atmosphere"
-	Location		[535, 301, 1336, 738]
-	Open			on
+	Location		[693, 82, 1356, 699]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -980,14 +988,14 @@ Model {
 	  GeneratePreprocessorConditionals off
 	  custom		  on
 	  g			  "3.70"
-	  gamma			  "1.29"
+	  gamma			  "1.72"
 	  R			  "191"
 	  L			  "0.0044"
 	  h_trop		  "25000"
 	  h_strat		  "50000"
 	  rho0			  "0.020"
 	  P0			  "800"
-	  T0			  "241"
+	  T0			  "218"
 	}
 	Block {
 	  BlockType		  Product
@@ -999,6 +1007,48 @@ Model {
 	  InputSameDT		  off
 	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
 	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Scope1"
+	  SID			  "524"
+	  Ports			  [1]
+	  Position		  [170, 24, 200, 56]
+	  Floating		  off
+	  Location		  [86, 227, 962, 682]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  YMin			  "0"
+	  YMax			  "4500"
+	  SaveName		  "ScopeData9"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	}
+	Block {
+	  BlockType		  Scope
+	  Name			  "Scope4"
+	  SID			  "522"
+	  Ports			  [1]
+	  Position		  [420, 179, 450, 211]
+	  Floating		  off
+	  Location		  [86, 227, 962, 682]
+	  Open			  off
+	  NumInputPorts		  "1"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  YMin			  "0"
+	  YMax			  "4500"
+	  SaveName		  "ScopeData7"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
 	}
 	Block {
 	  BlockType		  Terminator
@@ -1091,15 +1141,30 @@ Model {
 	Line {
 	  SrcBlock		  "H"
 	  SrcPort		  1
-	  DstBlock		  "ISA Atmosphere Model"
-	  DstPort		  1
+	  Points		  [30, 0]
+	  Branch {
+	    DstBlock		    "ISA Atmosphere Model"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, -110]
+	    DstBlock		    "Scope1"
+	    DstPort		    1
+	  }
 	}
 	Line {
 	  SrcBlock		  "ISA Atmosphere Model"
 	  SrcPort		  4
-	  Points		  [5, 0; 0, 45]
-	  DstBlock		  "Product1"
-	  DstPort		  1
+	  Points		  [5, 0; 0, 25]
+	  Branch {
+	    Points		    [0, 20]
+	    DstBlock		    "Product1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Scope4"
+	    DstPort		    1
+	  }
 	}
       }
     }
@@ -1122,8 +1187,54 @@ Model {
       RTWMemSecDataParameters "Inherit from model"
       GeneratePreprocessorConditionals off
       relop		      "<="
-      const		      "3364.5e3"
+      const		      "3395e3"
       LogicOutDataTypeMode    "boolean"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Compare\nTo Constant1"
+      SID		      "489"
+      Ports		      [1, 1]
+      Position		      [565, 815, 595, 845]
+      LibraryVersion	      "1.236"
+      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+      SourceType	      "Compare To Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      relop		      "<="
+      const		      "3500e3"
+      LogicOutDataTypeMode    "uint8"
+      ZeroCross		      on
+    }
+    Block {
+      BlockType		      Reference
+      Name		      "Compare\nTo Constant2"
+      SID		      "490"
+      Ports		      [1, 1]
+      Position		      [565, 875, 595, 905]
+      LibraryVersion	      "1.236"
+      SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+      SourceType	      "Compare To Constant"
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      relop		      "<="
+      const		      "3410e3"
+      LogicOutDataTypeMode    "uint8"
       ZeroCross		      on
     }
     Block {
@@ -1149,10 +1260,31 @@ Model {
     }
     Block {
       BlockType		      Constant
+      Name		      "Constant3"
+      SID		      "471"
+      Position		      [1315, 640, 1345, 670]
+      Value		      "[0 0 0]"
+    }
+    Block {
+      BlockType		      Constant
       Name		      "Constant4"
       SID		      "272"
       Position		      [1160, 705, 1190, 735]
       Value		      "[0 255 10]"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant5"
+      SID		      "472"
+      Position		      [1315, 540, 1345, 570]
+      Value		      "[0.01 0.01 0.01]"
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Constant6"
+      SID		      "523"
+      Position		      [1505, 690, 1535, 720]
+      Value		      "0"
     }
     Block {
       BlockType		      Demux
@@ -1238,10 +1370,59 @@ Model {
     }
     Block {
       BlockType		      From
+      Name		      "From14"
+      SID		      "467"
+      Position		      [1430, 866, 1470, 894]
+      GotoTag		      "a_atm"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From16"
+      SID		      "487"
+      Position		      [475, 816, 515, 844]
+      GotoTag		      "h"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From17"
+      SID		      "491"
+      Position		      [475, 876, 515, 904]
+      GotoTag		      "h"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From18"
+      SID		      "493"
+      Position		      [340, 622, 415, 648]
+      GotoTag		      "using_engine"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From19"
+      SID		      "498"
+      Position		      [1350, 757, 1445, 783]
+      GotoTag		      "using_parachute"
+    }
+    Block {
+      BlockType		      From
       Name		      "From2"
       SID		      "122"
       Position		      [100, 396, 140, 424]
       GotoTag		      "z"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From20"
+      SID		      "499"
+      Position		      [1350, 807, 1425, 833]
+      GotoTag		      "using_engine"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From21"
+      SID		      "505"
+      Position		      [1260, 597, 1355, 623]
+      GotoTag		      "using_parachute"
     }
     Block {
       BlockType		      From
@@ -1288,9 +1469,9 @@ Model {
     Block {
       BlockType		      From
       Name		      "From9"
-      SID		      "313"
-      Position		      [380, 621, 420, 649]
-      GotoTag		      "h"
+      SID		      "496"
+      Position		      [55, 647, 150, 673]
+      GotoTag		      "using_parachute"
     }
     Block {
       BlockType		      Gain
@@ -1298,16 +1479,6 @@ Model {
       SID		      "136"
       Position		      [1210, 500, 1240, 530]
       Gain		      "-1/10000"
-      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
-    }
-    Block {
-      BlockType		      Gain
-      Name		      "Gain1"
-      SID		      "260"
-      Position		      [190, 645, 220, 675]
-      Gain		      "-1"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -1324,10 +1495,10 @@ Model {
     }
     Block {
       BlockType		      Gain
-      Name		      "Gain3"
-      SID		      "331"
-      Position		      [440, 620, 470, 650]
-      Gain		      "-1"
+      Name		      "Gain5"
+      SID		      "473"
+      Position		      [1515, 865, 1545, 895]
+      Gain		      "30"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -1346,6 +1517,14 @@ Model {
       SID		      "126"
       Position		      [905, 500, 945, 530]
       GotoTag		      "y"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto10"
+      SID		      "492"
+      Position		      [635, 874, 750, 906]
+      GotoTag		      "using_engine"
       TagVisibility	      "local"
     }
     Block {
@@ -1394,6 +1573,22 @@ Model {
       SID		      "319"
       Position		      [905, 680, 945, 710]
       GotoTag		      "az"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto8"
+      SID		      "466"
+      Position		      [575, 425, 615, 455]
+      GotoTag		      "a_atm"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto9"
+      SID		      "486"
+      Position		      [635, 814, 750, 846]
+      GotoTag		      "using_parachute"
       TagVisibility	      "local"
     }
     Block {
@@ -1519,6 +1714,27 @@ Model {
     }
     Block {
       BlockType		      Scope
+      Name		      "Scope2"
+      SID		      "337"
+      Ports		      [1]
+      Position		      [215, 759, 245, 791]
+      Floating		      off
+      Location		      [86, 227, 962, 682]
+      Open		      off
+      NumInputPorts	      "1"
+      List {
+	ListType		AxesTitles
+	axes1			"%<SignalLabel>"
+      }
+      YMin		      "0.475"
+      YMax		      "0.525"
+      SaveName		      "ScopeData6"
+      DataFormat	      "StructureWithTime"
+      LimitDataPoints	      off
+      SampleTime	      "0"
+    }
+    Block {
+      BlockType		      Scope
       Name		      "Scope3"
       SID		      "292"
       Ports		      [1]
@@ -1538,21 +1754,21 @@ Model {
     }
     Block {
       BlockType		      Scope
-      Name		      "Scope4"
-      SID		      "261"
+      Name		      "Scope5"
+      SID		      "485"
       Ports		      [1]
-      Position		      [335, 619, 365, 651]
+      Position		      [1725, 704, 1755, 736]
       Floating		      off
-      Location		      [86, 227, 962, 682]
+      Location		      [157, 218, 844, 676]
       Open		      off
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
       }
-      YMin		      "0.475"
-      YMax		      "0.525"
-      SaveName		      "ScopeData7"
+      YMin		      "157"
+      YMax		      "157.475"
+      SaveName		      "ScopeData8"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -1579,7 +1795,7 @@ Model {
       System {
 	Name			"Subsystem1"
 	Location		[118, 215, 1019, 691]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1628,7 +1844,7 @@ Model {
 	  SID			  "20"
 	  Ports			  [1, 1]
 	  Position		  [180, 20, 210, 50]
-	  InitialCondition	  "1366"
+	  InitialCondition	  "1300"
 	}
 	Block {
 	  BlockType		  Integrator
@@ -1909,7 +2125,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem2"
-	Location		[816, 687, 1314, 987]
+	Location		[395, 283, 893, 583]
 	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2107,8 +2323,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem3"
-	Location		[469, 212, 1390, 513]
-	Open			on
+	Location		[235, 215, 1156, 516]
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2202,8 +2418,8 @@ Model {
 	  Ports			  [4]
 	  Position		  [545, 42, 720, 183]
 	  Floating		  off
-	  Location		  [533, 56, 1368, 735]
-	  Open			  on
+	  Location		  [1, 48, 1367, 727]
+	  Open			  off
 	  NumInputPorts		  "4"
 	  ZoomMode		  "yonly"
 	  List {
@@ -2364,20 +2580,238 @@ Model {
       }
     }
     Block {
+      BlockType		      SubSystem
+      Name		      "Subsystem4"
+      SID		      "474"
+      Ports		      [1, 1]
+      Position		      [495, 416, 530, 464]
+      MinAlgLoopOccurrences   off
+      PropExecContextOutsideSubsystem off
+      RTWSystemCode	      "Auto"
+      FunctionWithSeparateData off
+      Opaque		      off
+      RequestExecContextInheritance off
+      MaskHideContents	      off
+      System {
+	Name			"Subsystem4"
+	Location		[395, 283, 893, 583]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"A4"
+	PaperUnits		"centimeters"
+	TiledPaperMargins	[1.270000, 1.270000, 1.270000, 1.270000]
+	TiledPageScale		1
+	ShowPageBoundaries	off
+	ZoomFactor		"100"
+	Block {
+	  BlockType		  Inport
+	  Name			  "pos"
+	  SID			  "475"
+	  Position		  [25, 143, 55, 157]
+	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Demux
+	  Name			  "Demux"
+	  SID			  "476"
+	  Ports			  [1, 3]
+	  Position		  [115, 131, 120, 169]
+	  ShowName		  off
+	  Outputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  SID			  "477"
+	  Ports			  [3, 1]
+	  Position		  [330, 131, 335, 169]
+	  ShowName		  off
+	  Inputs		  "3"
+	  DisplayOption		  "bar"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  SID			  "478"
+	  Ports			  [2, 1]
+	  Position		  [240, 97, 270, 128]
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  SID			  "479"
+	  Ports			  [2, 1]
+	  Position		  [240, 142, 270, 173]
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product2"
+	  SID			  "480"
+	  Ports			  [2, 1]
+	  Position		  [240, 187, 270, 218]
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Sqrt
+	  Name			  "Sqrt"
+	  SID			  "481"
+	  Position		  [405, 135, 435, 165]
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum of\nElements"
+	  SID			  "482"
+	  Ports			  [1, 1]
+	  Position		  [360, 135, 390, 165]
+	  Inputs		  "+"
+	  InputSameDT		  off
+	  OutDataTypeStr	  "Inherit: Inherit via internal rule"
+	  SaturateOnIntegerOverflow off
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "g"
+	  SID			  "483"
+	  Position		  [455, 143, 485, 157]
+	  IconDisplay		  "Port number"
+	}
+	Line {
+	  SrcBlock		  "Sqrt"
+	  SrcPort		  1
+	  DstBlock		  "g"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum of\nElements"
+	  SrcPort		  1
+	  DstBlock		  "Sqrt"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Sum of\nElements"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product2"
+	  SrcPort		  1
+	  Points		  [40, 0]
+	  DstBlock		  "Mux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -10]
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 25]
+	  DstBlock		  "Mux"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  3
+	  Points		  [35, 0; 0, 35]
+	  Branch {
+	    Points		    [0, 15]
+	    DstBlock		    "Product2"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Product2"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  2
+	  Points		  [55, 0]
+	  Branch {
+	    Points		    [0, 15]
+	    DstBlock		    "Product1"
+	    DstPort		    2
+	  }
+	  Branch {
+	    DstBlock		    "Product1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Demux"
+	  SrcPort		  1
+	  Points		  [35, 0; 0, -20]
+	  Branch {
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [0, -15]
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "pos"
+	  SrcPort		  1
+	  DstBlock		  "Demux"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
       BlockType		      Switch
       Name		      "Switch"
       SID		      "256"
-      Position		      [255, 640, 305, 680]
+      Position		      [1560, 590, 1610, 630]
+      Criteria		      "u2 ~= 0"
       Threshold		      "-3490e3"
       InputSameDT	      off
       SaturateOnIntegerOverflow	off
     }
     Block {
       BlockType		      Switch
+      Name		      "Switch1"
+      SID		      "497"
+      Position		      [255, 640, 305, 680]
+      Criteria		      "u2 ~= 0"
+      InputSameDT	      off
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Switch
       Name		      "Switch2"
-      SID		      "308"
-      Position		      [515, 510, 565, 550]
+      SID		      "501"
+      Position		      [1605, 700, 1655, 740]
+      Criteria		      "u2 ~= 0"
       Threshold		      "-3490e3"
+      InputSameDT	      off
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Switch
+      Name		      "Switch3"
+      SID		      "495"
+      Position		      [505, 575, 555, 615]
+      Criteria		      "u2 ~= 0"
       InputSameDT	      off
       SaturateOnIntegerOverflow	off
     }
@@ -2385,16 +2819,17 @@ Model {
       BlockType		      Reference
       Name		      "VR Sink"
       SID		      "205"
-      Ports		      [2]
-      Position		      [1580, 480, 1675, 555]
+      Ports		      [4]
+      Position		      [1715, 487, 1810, 563]
       LibraryVersion	      "1.241"
       SourceBlock	      "vrlib/VR Sink"
       SourceType	      "Virtual Reality Sink"
-      SampleTime	      "0.5"
+      SampleTime	      "0.2"
       ViewEnable	      on
       RemoteChange	      off
       RemoteView	      on
-      FieldsWritten	      "Ship.rotation.4.1.1.double#Ship.translation.3.1.1.double"
+      FieldsWritten	      "Ship.rotation.4.1.1.double#Ship.translation.3.1.1.double#parachute.scale.3.1.1.double#light"
+      ".intensity.1.1.1.double"
       WorldFileName	      "vrplanets.wrl"
       WorldDescription	      "Planets"
       AutoView		      off
@@ -2519,7 +2954,7 @@ Model {
       Ports		      [3]
       Position		      [980, 804, 1010, 836]
       Floating		      off
-      Location		      [599, 299, 1653, 862]
+      Location		      [307, 199, 1361, 762]
       Open		      off
       NumInputPorts	      "3"
       ZoomMode		      "yonly"
@@ -2758,18 +3193,6 @@ Model {
       SrcPort		      1
       Points		      [30, 0]
       Branch {
-	Points			[0, 115]
-	Branch {
-	  Points		  [0, 210]
-	  DstBlock		  "Compare\nTo Constant"
-	  DstPort		  1
-	}
-	Branch {
-	  DstBlock		  "Gain1"
-	  DstPort		  1
-	}
-      }
-      Branch {
 	Points			[0, -45]
 	Branch {
 	  DstBlock		  "Atmosphere"
@@ -2778,6 +3201,18 @@ Model {
 	Branch {
 	  Points		  [0, -75]
 	  DstBlock		  "Scope1"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[0, 230]
+	Branch {
+	  Points		  [0, 95]
+	  DstBlock		  "Compare\nTo Constant"
+	  DstPort		  1
+	}
+	Branch {
+	  DstBlock		  "Scope2"
 	  DstPort		  1
 	}
       }
@@ -2825,9 +3260,9 @@ Model {
     Line {
       SrcBlock		      "Gain"
       SrcPort		      1
-      Points		      [0, 20]
+      Points		      [0, 0]
       Branch {
-	Points			[0, 165]
+	Points			[0, 185]
 	DstBlock		"VR Tracer"
 	DstPort			1
       }
@@ -2871,37 +3306,24 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Switch"
+      SrcBlock		      "Switch1"
       SrcPort		      1
-      Points		      [0, -25]
-      Branch {
-	DstBlock		"Atmosphere"
-	DstPort			4
-      }
-      Branch {
-	DstBlock		"Scope4"
-	DstPort			1
-      }
+      DstBlock		      "Atmosphere"
+      DstPort		      4
     }
     Line {
       SrcBlock		      "Constant1"
       SrcPort		      1
       Points		      [5, 0; 0, -20]
-      DstBlock		      "Switch"
+      DstBlock		      "Switch1"
       DstPort		      3
     }
     Line {
       SrcBlock		      "Constant2"
       SrcPort		      1
       Points		      [5, 0; 0, 20]
-      DstBlock		      "Switch"
+      DstBlock		      "Switch1"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Gain1"
-      SrcPort		      1
-      DstBlock		      "Switch"
-      DstPort		      2
     }
     Line {
       SrcBlock		      "Subsystem1"
@@ -2930,23 +3352,17 @@ Model {
     Line {
       SrcBlock		      "Viewpoint Direction\nto VRML Orientation"
       SrcPort		      1
-      Points		      [60, 0]
+      Points		      [0, 0]
       Branch {
-	Points			[50, 0; 0, 80]
-	DstBlock		"VR Sink"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, -105]
+	Points			[60, 0; 0, -105]
 	DstBlock		"Scope3"
 	DstPort			1
       }
-    }
-    Line {
-      SrcBlock		      "From9"
-      SrcPort		      1
-      DstBlock		      "Gain3"
-      DstPort		      1
+      Branch {
+	Points			[315, 0; 0, 75]
+	DstBlock		"VR Sink"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "Subsystem1"
@@ -2981,32 +3397,26 @@ Model {
       DstPort		      3
     }
     Line {
-      SrcBlock		      "Switch2"
+      SrcBlock		      "Switch3"
       SrcPort		      1
-      Points		      [0, -35]
+      Points		      [20, 0]
       DstBlock		      "Demux3"
       DstPort		      1
     }
     Line {
       SrcBlock		      "Atmosphere"
       SrcPort		      1
-      Points		      [30, 0; 0, -15]
-      DstBlock		      "Switch2"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Gain2"
-      SrcPort		      1
-      Points		      [25, 0]
-      DstBlock		      "Switch2"
-      DstPort		      3
-    }
-    Line {
-      SrcBlock		      "Gain3"
-      SrcPort		      1
-      Points		      [10, 0; 0, -105]
-      DstBlock		      "Switch2"
-      DstPort		      2
+      Points		      [20, 0]
+      Branch {
+	Points			[0, -90]
+	DstBlock		"Subsystem4"
+	DstPort			1
+      }
+      Branch {
+	Points			[15, 0; 0, 80]
+	DstBlock		"Switch3"
+	DstPort			3
+      }
     }
     Line {
       SrcBlock		      "From13"
@@ -3018,6 +3428,136 @@ Model {
       SrcBlock		      "Normalize Vector1"
       SrcPort		      1
       DstBlock		      "Gain2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From14"
+      SrcPort		      1
+      DstBlock		      "Gain5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Switch"
+      SrcPort		      1
+      Points		      [40, 0; 0, -75]
+      DstBlock		      "VR Sink"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Constant3"
+      SrcPort		      1
+      Points		      [195, 0]
+      DstBlock		      "Switch"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Constant5"
+      SrcPort		      1
+      Points		      [195, 0]
+      DstBlock		      "Switch"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From21"
+      SrcPort		      1
+      DstBlock		      "Switch"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Subsystem4"
+      SrcPort		      1
+      DstBlock		      "Goto8"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From16"
+      SrcPort		      1
+      DstBlock		      "Compare\nTo Constant1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Compare\nTo Constant1"
+      SrcPort		      1
+      DstBlock		      "Goto9"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From17"
+      SrcPort		      1
+      DstBlock		      "Compare\nTo Constant2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Compare\nTo Constant2"
+      SrcPort		      1
+      DstBlock		      "Goto10"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From9"
+      SrcPort		      1
+      DstBlock		      "Switch1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From19"
+      SrcPort		      1
+      DstBlock		      "Add"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From20"
+      SrcPort		      1
+      Points		      [70, 0; 0, -35]
+      DstBlock		      "Add"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Add"
+      SrcPort		      1
+      Points		      [5, 0; 0, -60]
+      DstBlock		      "Switch2"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Switch2"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	Points			[0, -165]
+	DstBlock		"VR Sink"
+	DstPort			4
+      }
+      Branch {
+	DstBlock		"Scope5"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Gain5"
+      SrcPort		      1
+      Points		      [40, 0]
+      DstBlock		      "Switch2"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Constant6"
+      SrcPort		      1
+      DstBlock		      "Switch2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From18"
+      SrcPort		      1
+      Points		      [35, 0; 0, -40]
+      DstBlock		      "Switch3"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Gain2"
+      SrcPort		      1
+      Points		      [10, 0; 0, -180]
+      DstBlock		      "Switch3"
       DstPort		      1
     }
     Annotation {

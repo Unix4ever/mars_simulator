@@ -29,7 +29,7 @@ DEF Mars Transform {
   children [
     Shape {
       geometry Sphere {
-        radius 338
+        radius 340
       }
       appearance Appearance {
         texture ImageTexture {
@@ -47,14 +47,12 @@ DEF Mars Transform {
       position 286.697 418.655 -210.934
       orientation -0.148931 0.938353 0.311951 3.05811
     }
-    SphereSensor {
-    }
   ]
 }
 DirectionalLight {
 }
 DEF Ship Transform {
-  translation 0 0 500
+  translation 366 366 0
   scale 0.2 0.2 0.2
   rotation 0 0 0 0
   children [
@@ -78,19 +76,36 @@ DEF Ship Transform {
     Fog {
       visibilityRange 1000
       fogType "RADIAL"
-      color 0.4 0.5 0.6
+      color 0.7 0.7 0.6
     }
     Viewpoint {
       description "Bottom ship view"
-      position 4.34514 -0.733423 1.73588
-      orientation -0.055554 0.934585 -0.351376 1.01
+      position -1.26828 -5.43194 6.76732
+      orientation 0.166887 -0.00771034 -0.985946 1.30309
       fieldOfView 0.7854
     }
     Viewpoint {
-      description ""
-      position -5.49663 2.07445 1.49806
-      orientation -0.289077 -0.950623 -0.11292 1.17569
+      description "Side view"
+      position -24.5808 5.84582 -6.80378
+      orientation -0.220525 -0.974917 -0.0300912 2.25908
       fieldOfView 0.7854
+    }
+    DEF parachute Transform {
+      scale 0 0 0
+      children Transform {
+        translation 56 56 170
+        rotation -1 0 0 1.6
+        children Inline {
+          url "spacedish_parashute.WRL" 
+        }
+      }
+    }
+    DEF light PointLight {
+      radius 0.001
+      location 0 0 0.5
+      intensity 0
+      color 0.7 0.01 0
+      attenuation 2000 0 0
     }
   ]
 }
