@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.70"
+    ComputedModelVersion    "1.71"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,11 +24,11 @@ Model {
   Creator		  "Artem"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Artem"
+  LastModifiedBy	  "Urzzza"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Nov 24 20:46:15 2011"
-  RTWModifiedTimeStamp	  244041750
-  ModelVersionFormat	  "1.%<AutoIncrement:70>"
+  LastModifiedDate	  "Wed Nov 30 23:08:16 2011"
+  RTWModifiedTimeStamp	  244595267
+  ModelVersionFormat	  "1.%<AutoIncrement:71>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -65,7 +65,6 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "ModelProd"
-    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -73,7 +72,6 @@ Model {
       Cell		      "ModelProd"
       PropName		      "logAsSpecifiedByModels_"
     }
-    logAsSpecifiedByModelsSSIDs_ []
   }
   RecordCoverage	  off
   CovPath		  "/"
@@ -864,7 +862,7 @@ Model {
   }
   System {
     Name		    "ModelProd"
-    Location		    [0, 50, 1350, 736]
+    Location		    [2, 74, 1661, 972]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -878,13 +876,13 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "307"
+    SIDHighWatermark	    "331"
     Block {
       BlockType		      SubSystem
       Name		      "Atmosphere"
       SID		      "210"
       Ports		      [4, 1]
-      Position		      [365, 492, 470, 568]
+      Position		      [325, 492, 430, 568]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
       RTWSystemCode	      "Auto"
@@ -979,15 +977,15 @@ Model {
 	  RTWMemSecDataParameters "Inherit from model"
 	  GeneratePreprocessorConditionals off
 	  custom		  on
-	  g			  "3.72"
-	  gamma			  "2"
-	  R			  "188.92"
-	  L			  "0.0045"
+	  g			  "3.70"
+	  gamma			  "1.29"
+	  R			  "191"
+	  L			  "0.0044"
 	  h_trop		  "25000"
 	  h_strat		  "50000"
-	  rho0			  "0.015"
+	  rho0			  "0.020"
 	  P0			  "800"
-	  T0			  "218"
+	  T0			  "241"
 	}
 	Block {
 	  BlockType		  Product
@@ -1108,7 +1106,7 @@ Model {
       Name		      "Compare\nTo Constant"
       SID		      "175"
       Ports		      [1, 1]
-      Position		      [325, 725, 355, 755]
+      Position		      [275, 855, 305, 885]
       LibraryVersion	      "1.236"
       SourceBlock	      "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
       SourceType	      "Compare To Constant"
@@ -1130,21 +1128,21 @@ Model {
       BlockType		      Constant
       Name		      "Constant"
       SID		      "238"
-      Position		      [230, 560, 260, 590]
+      Position		      [190, 560, 220, 590]
       Value		      "300"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant1"
       SID		      "239"
-      Position		      [230, 680, 260, 710]
+      Position		      [190, 680, 220, 710]
       Value		      "10"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant2"
       SID		      "255"
-      Position		      [230, 610, 260, 640]
+      Position		      [190, 610, 220, 640]
       Value		      "220"
     }
     Block {
@@ -1189,7 +1187,7 @@ Model {
       Name		      "Demux3"
       SID		      "240"
       Ports		      [1, 3]
-      Position		      [575, 476, 580, 514]
+      Position		      [595, 476, 600, 514]
       ShowName		      off
       Outputs		      "3"
       DisplayOption	      "bar"
@@ -1207,6 +1205,48 @@ Model {
       SID		      "121"
       Position		      [100, 346, 140, 374]
       GotoTag		      "y"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From10"
+      SID		      "320"
+      Position		      [870, 756, 910, 784]
+      GotoTag		      "ax"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From11"
+      SID		      "321"
+      Position		      [870, 806, 910, 834]
+      GotoTag		      "ay"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From12"
+      SID		      "322"
+      Position		      [870, 851, 910, 879]
+      GotoTag		      "az"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From13"
+      SID		      "327"
+      Position		      [270, 701, 310, 729]
+      GotoTag		      "ax"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From14"
+      SID		      "328"
+      Position		      [270, 751, 310, 779]
+      GotoTag		      "ay"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From15"
+      SID		      "329"
+      Position		      [270, 796, 310, 824]
+      GotoTag		      "az"
     }
     Block {
       BlockType		      From
@@ -1247,7 +1287,7 @@ Model {
       BlockType		      From
       Name		      "From7"
       SID		      "227"
-      Position		      [230, 506, 270, 534]
+      Position		      [190, 506, 230, 534]
       GotoTag		      "V"
     }
     Block {
@@ -1256,6 +1296,13 @@ Model {
       SID		      "242"
       Position		      [1035, 406, 1075, 434]
       GotoTag		      "V"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From9"
+      SID		      "313"
+      Position		      [380, 621, 420, 649]
+      GotoTag		      "h"
     }
     Block {
       BlockType		      Gain
@@ -1271,7 +1318,27 @@ Model {
       BlockType		      Gain
       Name		      "Gain1"
       SID		      "260"
-      Position		      [230, 645, 260, 675]
+      Position		      [190, 645, 220, 675]
+      Gain		      "-1"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain2"
+      SID		      "330"
+      Position		      [410, 750, 440, 780]
+      Gain		      "-1.1"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain3"
+      SID		      "331"
+      Position		      [440, 620, 470, 650]
       Gain		      "-1"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
@@ -1315,6 +1382,30 @@ Model {
       SID		      "209"
       Position		      [1055, 241, 1160, 269]
       GotoTag		      "V"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto5"
+      SID		      "315"
+      Position		      [905, 590, 945, 620]
+      GotoTag		      "ax"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto6"
+      SID		      "316"
+      Position		      [905, 635, 945, 665]
+      GotoTag		      "ay"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto7"
+      SID		      "319"
+      Position		      [905, 680, 945, 710]
+      GotoTag		      "az"
       TagVisibility	      "local"
     }
     Block {
@@ -1378,6 +1469,16 @@ Model {
       DisplayOption	      "bar"
     }
     Block {
+      BlockType		      Mux
+      Name		      "Mux6"
+      SID		      "323"
+      Ports		      [3, 1]
+      Position		      [370, 731, 375, 799]
+      ShowName		      off
+      Inputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
       BlockType		      Reference
       Name		      "Normalize Vector"
       SID		      "241"
@@ -1402,7 +1503,7 @@ Model {
       Name		      "Scope1"
       SID		      "307"
       Ports		      [1]
-      Position		      [270, 409, 300, 441]
+      Position		      [265, 409, 295, 441]
       Floating		      off
       Location		      [86, 227, 962, 682]
       Open		      off
@@ -1414,25 +1515,6 @@ Model {
       YMin		      "0.475"
       YMax		      "0.525"
       SaveName		      "ScopeData2"
-      DataFormat	      "StructureWithTime"
-      LimitDataPoints	      off
-      SampleTime	      "0"
-    }
-    Block {
-      BlockType		      Scope
-      Name		      "Scope2"
-      SID		      "228"
-      Ports		      [1]
-      Position		      [515, 514, 545, 546]
-      Floating		      off
-      Location		      [364, 211, 1051, 669]
-      Open		      off
-      NumInputPorts	      "1"
-      List {
-	ListType		AxesTitles
-	axes1			"%<SignalLabel>"
-      }
-      SaveName		      "ScopeData5"
       DataFormat	      "StructureWithTime"
       LimitDataPoints	      off
       SampleTime	      "0"
@@ -1461,7 +1543,7 @@ Model {
       Name		      "Scope4"
       SID		      "261"
       Ports		      [1]
-      Position		      [440, 619, 470, 651]
+      Position		      [335, 619, 365, 651]
       Floating		      off
       Location		      [86, 227, 962, 682]
       Open		      off
@@ -1481,7 +1563,7 @@ Model {
       BlockType		      Stop
       Name		      "Stop Simulation"
       SID		      "176"
-      Position		      [420, 722, 455, 758]
+      Position		      [370, 852, 405, 888]
     }
     Block {
       BlockType		      SubSystem
@@ -1498,8 +1580,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem1"
-	Location		[120, 247, 1000, 670]
-	Open			off
+	Location		[118, 215, 1019, 691]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2027,8 +2109,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem3"
-	Location		[173, 223, 1094, 523]
-	Open			off
+	Location		[173, 223, 1094, 524]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2122,7 +2204,7 @@ Model {
 	  Ports			  [4]
 	  Position		  [545, 42, 720, 183]
 	  Floating		  off
-	  Location		  [5, 48, 1367, 727]
+	  Location		  [533, 56, 1368, 735]
 	  Open			  off
 	  NumInputPorts		  "4"
 	  ZoomMode		  "yonly"
@@ -2287,8 +2369,17 @@ Model {
       BlockType		      Switch
       Name		      "Switch"
       SID		      "256"
-      Position		      [295, 640, 345, 680]
-      Threshold		      "-3490e3"
+      Position		      [255, 640, 305, 680]
+      Threshold		      "-4490e3"
+      InputSameDT	      off
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Switch
+      Name		      "Switch1"
+      SID		      "311"
+      Position		      [505, 615, 555, 655]
+      Threshold		      "-3500e3"
       InputSameDT	      off
       SaturateOnIntegerOverflow	off
     }
@@ -2402,9 +2493,9 @@ Model {
     Block {
       BlockType		      Scope
       Name		      "acceleration1"
-      SID		      "267"
+      SID		      "317"
       Ports		      [3]
-      Position		      [930, 634, 960, 666]
+      Position		      [980, 804, 1010, 836]
       Floating		      off
       Location		      [599, 299, 1653, 862]
       Open		      off
@@ -2418,7 +2509,7 @@ Model {
       }
       YMin		      "0~-5~-5"
       YMax		      "2.2e+021~5~5"
-      SaveName		      "ScopeData8"
+      SaveName		      "ScopeData5"
       DataFormat	      "StructureWithTime"
       SampleTime	      "0"
     }
@@ -2627,11 +2718,11 @@ Model {
     Line {
       SrcBlock		      "From6"
       SrcPort		      1
-      Points		      [70, 0]
+      Points		      [30, 0]
       Branch {
 	Points			[0, 115]
 	Branch {
-	  Points		  [0, 80]
+	  Points		  [0, 210]
 	  DstBlock		  "Compare\nTo Constant"
 	  DstPort		  1
 	}
@@ -2714,20 +2805,6 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Atmosphere"
-      SrcPort		      1
-      Points		      [0, 0]
-      Branch {
-	DstBlock		"Scope2"
-	DstPort			1
-      }
-      Branch {
-	Points			[15, 0; 0, -35]
-	DstBlock		"Demux3"
-	DstPort			1
-      }
-    }
-    Line {
       SrcBlock		      "Constant"
       SrcPort		      1
       Points		      [20, 0; 0, -35]
@@ -2737,21 +2814,21 @@ Model {
     Line {
       SrcBlock		      "Demux3"
       SrcPort		      1
-      Points		      [70, 0; 0, -100]
+      Points		      [50, 0; 0, -100]
       DstBlock		      "Mux"
       DstPort		      2
     }
     Line {
       SrcBlock		      "Demux3"
       SrcPort		      2
-      Points		      [70, 0; 0, 30]
+      Points		      [50, 0; 0, 30]
       DstBlock		      "Mux1"
       DstPort		      2
     }
     Line {
       SrcBlock		      "Demux3"
       SrcPort		      3
-      Points		      [35, 0; 0, 160]
+      Points		      [15, 0; 0, 160]
       DstBlock		      "Mux4"
       DstPort		      2
     }
@@ -2791,22 +2868,8 @@ Model {
     Line {
       SrcBlock		      "Subsystem1"
       SrcPort		      7
-      Points		      [30, 0; 0, 35]
-      DstBlock		      "acceleration1"
+      DstBlock		      "Goto5"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Subsystem1"
-      SrcPort		      8
-      DstBlock		      "acceleration1"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "Subsystem1"
-      SrcPort		      9
-      Points		      [30, 0; 0, -35]
-      DstBlock		      "acceleration1"
-      DstPort		      3
     }
     Line {
       SrcBlock		      "Constant4"
@@ -2840,6 +2903,97 @@ Model {
 	DstBlock		"Scope3"
 	DstPort			1
       }
+    }
+    Line {
+      SrcBlock		      "Atmosphere"
+      SrcPort		      1
+      Points		      [25, 0; 0, 90]
+      DstBlock		      "Switch1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Switch1"
+      SrcPort		      1
+      Points		      [0, -140]
+      DstBlock		      "Demux3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From9"
+      SrcPort		      1
+      DstBlock		      "Gain3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Subsystem1"
+      SrcPort		      8
+      DstBlock		      "Goto6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Subsystem1"
+      SrcPort		      9
+      DstBlock		      "Goto7"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From10"
+      SrcPort		      1
+      Points		      [25, 0; 0, 40]
+      DstBlock		      "acceleration1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From11"
+      SrcPort		      1
+      DstBlock		      "acceleration1"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From12"
+      SrcPort		      1
+      Points		      [25, 0; 0, -35]
+      DstBlock		      "acceleration1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From13"
+      SrcPort		      1
+      Points		      [0, 30]
+      DstBlock		      "Mux6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From14"
+      SrcPort		      1
+      DstBlock		      "Mux6"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From15"
+      SrcPort		      1
+      Points		      [40, 0]
+      DstBlock		      "Mux6"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Mux6"
+      SrcPort		      1
+      DstBlock		      "Gain2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gain2"
+      SrcPort		      1
+      Points		      [20, 0; 0, -115]
+      DstBlock		      "Switch1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Gain3"
+      SrcPort		      1
+      DstBlock		      "Switch1"
+      DstPort		      2
     }
   }
 }
