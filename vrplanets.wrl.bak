@@ -29,7 +29,7 @@ DEF Mars Transform {
   children [
     Shape {
       geometry Sphere {
-        radius 340
+        radius 339
       }
       appearance Appearance {
         texture ImageTexture {
@@ -83,7 +83,7 @@ DEF Ship Transform {
       scale 0 0 0
       children Transform {
         translation 56 56 170
-        rotation -1 0 0 1.7
+        rotation -1 0 0 1.6
         children Inline {
           url "spacedish_parashute.WRL" 
         }
@@ -104,7 +104,7 @@ DEF Ship Transform {
           children Transform {
             scaleOrientation 0 0 0 0
             scale 0.01 0.01 0.01
-            rotation -1 0 0 1.7
+            rotation -1 0 0 1.6
             children Inline {
               url "spacedish_full.WRL" 
             }
