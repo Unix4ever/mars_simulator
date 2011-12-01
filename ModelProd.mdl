@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.150"
+    ComputedModelVersion    "1.151"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -24,11 +24,11 @@ Model {
   Creator		  "Artem"
   UpdateHistory		  "UpdateHistoryNever"
   ModifiedByFormat	  "%<Auto>"
-  LastModifiedBy	  "Artem"
+  LastModifiedBy	  "Urzzza"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Dec 01 02:23:41 2011"
-  RTWModifiedTimeStamp	  244605588
-  ModelVersionFormat	  "1.%<AutoIncrement:150>"
+  LastModifiedDate	  "Thu Dec 01 13:30:35 2011"
+  RTWModifiedTimeStamp	  244646637
+  ModelVersionFormat	  "1.%<AutoIncrement:151>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -65,6 +65,7 @@ Model {
     $ObjectID		    1
     $ClassName		    "Simulink.SimulationData.ModelLoggingInfo"
     model_		    "ModelProd"
+    signals_		    []
     overrideMode_	    [0.0]
     Array {
       Type		      "Cell"
@@ -72,6 +73,7 @@ Model {
       Cell		      "ModelProd"
       PropName		      "logAsSpecifiedByModels_"
     }
+    logAsSpecifiedByModelsSSIDs_ []
   }
   RecordCoverage	  off
   CovPath		  "/"
@@ -862,7 +864,7 @@ Model {
   }
   System {
     Name		    "ModelProd"
-    Location		    [2, 74, 1347, 690]
+    Location		    [2, 74, 1661, 972]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -876,7 +878,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "524"
+    SIDHighWatermark	    "537"
     Block {
       BlockType		      Sum
       Name		      "Add"
@@ -1210,7 +1212,7 @@ Model {
       RTWMemSecDataParameters "Inherit from model"
       GeneratePreprocessorConditionals off
       relop		      "<="
-      const		      "3500e3"
+      const		      "4000e3"
       LogicOutDataTypeMode    "uint8"
       ZeroCross		      on
     }
@@ -1233,7 +1235,7 @@ Model {
       RTWMemSecDataParameters "Inherit from model"
       GeneratePreprocessorConditionals off
       relop		      "<="
-      const		      "3410e3"
+      const		      "3700e3"
       LogicOutDataTypeMode    "uint8"
       ZeroCross		      on
     }
@@ -1256,7 +1258,7 @@ Model {
       Name		      "Constant2"
       SID		      "255"
       Position		      [190, 610, 220, 640]
-      Value		      "220"
+      Value		      "100"
     }
     Block {
       BlockType		      Constant
@@ -1364,9 +1366,9 @@ Model {
     Block {
       BlockType		      From
       Name		      "From13"
-      SID		      "332"
-      Position		      [285, 746, 325, 774]
-      GotoTag		      "V"
+      SID		      "529"
+      Position		      [745, 81, 785, 109]
+      GotoTag		      "ax"
     }
     Block {
       BlockType		      From
@@ -1374,6 +1376,13 @@ Model {
       SID		      "467"
       Position		      [1430, 866, 1470, 894]
       GotoTag		      "a_atm"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From15"
+      SID		      "530"
+      Position		      [745, 131, 785, 159]
+      GotoTag		      "ay"
     }
     Block {
       BlockType		      From
@@ -1423,6 +1432,20 @@ Model {
       SID		      "505"
       Position		      [1260, 597, 1355, 623]
       GotoTag		      "using_parachute"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From22"
+      SID		      "531"
+      Position		      [745, 181, 785, 209]
+      GotoTag		      "az"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From23"
+      SID		      "534"
+      Position		      [285, 746, 325, 774]
+      GotoTag		      "V"
     }
     Block {
       BlockType		      From
@@ -1488,7 +1511,7 @@ Model {
       Name		      "Gain2"
       SID		      "330"
       Position		      [440, 745, 470, 775]
-      Gain		      "-1.1"
+      Gain		      "-3.81"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -1525,6 +1548,14 @@ Model {
       SID		      "492"
       Position		      [635, 874, 750, 906]
       GotoTag		      "using_engine"
+      TagVisibility	      "local"
+    }
+    Block {
+      BlockType		      Goto
+      Name		      "Goto11"
+      SID		      "533"
+      Position		      [920, 130, 960, 160]
+      GotoTag		      "asum"
       TagVisibility	      "local"
     }
     Block {
@@ -1652,6 +1683,16 @@ Model {
       DisplayOption	      "bar"
     }
     Block {
+      BlockType		      Mux
+      Name		      "Mux6"
+      SID		      "532"
+      Ports		      [3, 1]
+      Position		      [870, 93, 875, 197]
+      ShowName		      off
+      Inputs		      "3"
+      DisplayOption	      "bar"
+    }
+    Block {
       BlockType		      Reference
       Name		      "Normalize Vector"
       SID		      "241"
@@ -1699,7 +1740,7 @@ Model {
       Position		      [265, 409, 295, 441]
       Floating		      off
       Location		      [86, 227, 962, 682]
-      Open		      off
+      Open		      on
       NumInputPorts	      "1"
       List {
 	ListType		AxesTitles
@@ -1836,7 +1877,7 @@ Model {
 	  SID			  "18"
 	  Ports			  [1, 1]
 	  Position		  [180, 195, 210, 225]
-	  InitialCondition	  "4200"
+	  InitialCondition	  "5000"
 	}
 	Block {
 	  BlockType		  Integrator
@@ -1844,7 +1885,6 @@ Model {
 	  SID			  "20"
 	  Ports			  [1, 1]
 	  Position		  [180, 20, 210, 50]
-	  InitialCondition	  "1300"
 	}
 	Block {
 	  BlockType		  Integrator
@@ -2323,8 +2363,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem3"
-	Location		[235, 215, 1156, 516]
-	Open			off
+	Location		[542, 314, 1669, 849]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -2342,6 +2382,29 @@ Model {
 	  SID			  "187"
 	  Position		  [25, 143, 55, 157]
 	  IconDisplay		  "Port number"
+	}
+	Block {
+	  BlockType		  Reference
+	  Name			  "Compare\nTo Constant"
+	  SID			  "536"
+	  Ports			  [1, 1]
+	  Position		  [510, 315, 540, 345]
+	  LibraryVersion	  "1.236"
+	  SourceBlock		  "simulink/Logic and Bit\nOperations/Compare\nTo Constant"
+	  SourceType		  "Compare To Constant"
+	  ShowPortLabels	  "FromPortIcon"
+	  SystemSampleTime	  "-1"
+	  FunctionWithSeparateData off
+	  RTWMemSecFuncInitTerm	  "Inherit from model"
+	  RTWMemSecFuncExecute	  "Inherit from model"
+	  RTWMemSecDataConstants  "Inherit from model"
+	  RTWMemSecDataInternal	  "Inherit from model"
+	  RTWMemSecDataParameters "Inherit from model"
+	  GeneratePreprocessorConditionals off
+	  relop			  "<="
+	  const			  "5"
+	  LogicOutDataTypeMode	  "boolean"
+	  ZeroCross		  on
 	}
 	Block {
 	  BlockType		  Demux
@@ -2418,8 +2481,8 @@ Model {
 	  Ports			  [4]
 	  Position		  [545, 42, 720, 183]
 	  Floating		  off
-	  Location		  [1, 48, 1367, 727]
-	  Open			  off
+	  Location		  [6, 56, 931, 735]
+	  Open			  on
 	  NumInputPorts		  "4"
 	  ZoomMode		  "yonly"
 	  List {
@@ -2437,6 +2500,25 @@ Model {
 	  SampleTime		  "0"
 	}
 	Block {
+	  BlockType		  Scope
+	  Name			  "Scope3"
+	  SID			  "535"
+	  Ports			  [1]
+	  Position		  [590, 234, 620, 266]
+	  Floating		  off
+	  Location		  [157, 218, 844, 676]
+	  Open			  on
+	  NumInputPorts		  "1"
+	  List {
+	    ListType		    AxesTitles
+	    axes1		    "%<SignalLabel>"
+	  }
+	  SaveName		  "ScopeData10"
+	  DataFormat		  "StructureWithTime"
+	  LimitDataPoints	  off
+	  SampleTime		  "0"
+	}
+	Block {
 	  BlockType		  Sqrt
 	  Name			  "Sqrt"
 	  SID			  "193"
@@ -2447,6 +2529,12 @@ Model {
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
+	}
+	Block {
+	  BlockType		  Stop
+	  Name			  "Stop Simulation"
+	  SID			  "537"
+	  Position		  [605, 312, 640, 348]
 	}
 	Block {
 	  BlockType		  Sum
@@ -2570,12 +2658,35 @@ Model {
 	}
 	Line {
 	  Name			  "|V|"
-	  Labels		  [1, 0]
 	  SrcBlock		  "Sqrt"
 	  SrcPort		  1
-	  Points		  [90, 0]
-	  DstBlock		  "Scope"
-	  DstPort		  4
+	  Points		  [20, 0]
+	  Branch {
+	    Labels		    [1, 0]
+	    Points		    [60, 0]
+	    Branch {
+	      Points		      [10, 0]
+	      DstBlock		      "Scope"
+	      DstPort		      4
+	    }
+	    Branch {
+	      Points		      [0, 100]
+	      DstBlock		      "Scope3"
+	      DstPort		      1
+	    }
+	  }
+	  Branch {
+	    Points		    [0, 180]
+	    DstBlock		    "Compare\nTo Constant"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  Labels		  [0, 0]
+	  SrcBlock		  "Compare\nTo Constant"
+	  SrcPort		  1
+	  DstBlock		  "Stop Simulation"
+	  DstPort		  1
 	}
       }
     }
@@ -2876,30 +2987,6 @@ Model {
     }
     Block {
       BlockType		      Reference
-      Name		      "XY Graph"
-      SID		      "334"
-      Ports		      [2]
-      Position		      [570, 135, 600, 170]
-      LibraryVersion	      "1.236"
-      SourceBlock	      "simulink/Sinks/XY Graph"
-      SourceType	      "XY scope."
-      ShowPortLabels	      "FromPortIcon"
-      SystemSampleTime	      "-1"
-      FunctionWithSeparateData off
-      RTWMemSecFuncInitTerm   "Inherit from model"
-      RTWMemSecFuncExecute    "Inherit from model"
-      RTWMemSecDataConstants  "Inherit from model"
-      RTWMemSecDataInternal   "Inherit from model"
-      RTWMemSecDataParameters "Inherit from model"
-      GeneratePreprocessorConditionals off
-      xmin		      "-3800e3"
-      xmax		      "0"
-      ymin		      "-3800e3"
-      ymax		      "0"
-      st		      "-1"
-    }
-    Block {
-      BlockType		      Reference
       Name		      "Zonal Harmonic Gravity Model"
       SID		      "154"
       Ports		      [1, 1]
@@ -2978,7 +3065,7 @@ Model {
       Position		      [405, 214, 435, 246]
       Floating		      off
       Location		      [152, 123, 859, 691]
-      Open		      off
+      Open		      on
       NumInputPorts	      "3"
       List {
 	ListType		AxesTitles
@@ -2986,8 +3073,8 @@ Model {
 	axes2			"%<SignalLabel>"
 	axes3			"%<SignalLabel>"
       }
-      YMin		      "-347500~6.495e+006~44.525"
-      YMax		      "-317500~6.5175e+006~44.875"
+      YMin		      "-3.18895e+006~-1.97151e+006~25.7789"
+      YMax		      "-3.18894e+006~-1.97151e+006~25.779"
       DataFormat	      "StructureWithTime"
       SampleTime	      "0"
     }
@@ -3094,30 +3181,14 @@ Model {
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      1
-      Points		      [30, 0]
-      Branch {
-	DstBlock		"coordinats"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, -75]
-	DstBlock		"XY Graph"
-	DstPort			1
-      }
+      DstBlock		      "coordinats"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      2
-      Points		      [40, 0]
-      Branch {
-	DstBlock		"coordinats"
-	DstPort			2
-      }
-      Branch {
-	Points			[0, -70]
-	DstBlock		"XY Graph"
-	DstPort			2
-      }
+      DstBlock		      "coordinats"
+      DstPort		      2
     }
     Line {
       SrcBlock		      "Demux1"
@@ -3419,7 +3490,7 @@ Model {
       }
     }
     Line {
-      SrcBlock		      "From13"
+      SrcBlock		      "From23"
       SrcPort		      1
       DstBlock		      "Normalize Vector1"
       DstPort		      1
@@ -3558,6 +3629,32 @@ Model {
       SrcPort		      1
       Points		      [10, 0; 0, -180]
       DstBlock		      "Switch3"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "From15"
+      SrcPort		      1
+      DstBlock		      "Mux6"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "From22"
+      SrcPort		      1
+      Points		      [30, 0; 0, -15]
+      DstBlock		      "Mux6"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "From13"
+      SrcPort		      1
+      Points		      [30, 0; 0, 15]
+      DstBlock		      "Mux6"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Mux6"
+      SrcPort		      1
+      DstBlock		      "Goto11"
       DstPort		      1
     }
     Annotation {
