@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.151"
+    ComputedModelVersion    "1.152"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -26,9 +26,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Urzzza"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Dec 01 13:30:35 2011"
+  LastModifiedDate	  "Thu Dec 01 13:51:10 2011"
   RTWModifiedTimeStamp	  244646637
-  ModelVersionFormat	  "1.%<AutoIncrement:151>"
+  ModelVersionFormat	  "1.%<AutoIncrement:152>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1212,7 +1212,7 @@ Model {
       RTWMemSecDataParameters "Inherit from model"
       GeneratePreprocessorConditionals off
       relop		      "<="
-      const		      "4000e3"
+      const		      "3970e3"
       LogicOutDataTypeMode    "uint8"
       ZeroCross		      on
     }
@@ -1235,7 +1235,7 @@ Model {
       RTWMemSecDataParameters "Inherit from model"
       GeneratePreprocessorConditionals off
       relop		      "<="
-      const		      "3700e3"
+      const		      "3650e3"
       LogicOutDataTypeMode    "uint8"
       ZeroCross		      on
     }
@@ -1251,14 +1251,14 @@ Model {
       Name		      "Constant1"
       SID		      "239"
       Position		      [190, 680, 220, 710]
-      Value		      "8"
+      Value		      "7"
     }
     Block {
       BlockType		      Constant
       Name		      "Constant2"
       SID		      "255"
       Position		      [190, 610, 220, 640]
-      Value		      "100"
+      Value		      "70"
     }
     Block {
       BlockType		      Constant
@@ -1511,7 +1511,7 @@ Model {
       Name		      "Gain2"
       SID		      "330"
       Position		      [440, 745, 470, 775]
-      Gain		      "-3.81"
+      Gain		      "-6"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
