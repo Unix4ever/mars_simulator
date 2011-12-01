@@ -115,7 +115,7 @@ DEF Ship Transform {
           rotation -1 0 0 1.7
           children Transform {
             scale 0.01 0.01 0.01
-            rotation 1 0 0 1.7
+            rotation 1 0 0 0
             children Inline {
               url "spacedish_spacestuff.WRL" 
             }
