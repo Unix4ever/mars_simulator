@@ -29,7 +29,7 @@ DEF Mars Transform {
   children [
     Shape {
       geometry Sphere {
-        radius 340
+        radius 339
       }
       appearance Appearance {
         texture ImageTexture {
@@ -62,21 +62,10 @@ DEF Ship Transform {
       orientation -0.971912 0.219531 0.0848152 2.40833
       fieldOfView 0.7854
     }
-    Transform {
-      scale 0.3 0.3 0.3
-      rotation -1 0 1 0
-      children Transform {
-        scale 0.01 0.01 0.01
-        rotation -1 0 0 1.6
-        children Inline {
-          url "C:/Users/Artem/Documents/MATLAB/mars_simulator/spacedish_full.WRL" 
-        }
-      }
-    }
     Fog {
       visibilityRange 1000
       fogType "RADIAL"
-      color 0.7 0.7 0.6
+      color 0.7 0.3 0.2
     }
     Viewpoint {
       description "Bottom ship view"
@@ -102,10 +91,37 @@ DEF Ship Transform {
     }
     DEF light PointLight {
       radius 0.001
-      location 0 0 0.5
+      location 0 0 1
       intensity 0
       color 0.7 0.01 0
-      attenuation 2000 0 0
+      attenuation 10 100 100
+    }
+    DEF switch Switch {
+      whichChoice 0
+      choice [
+        Transform {
+          scale 0.3 0.3 0.3
+          children Transform {
+            scaleOrientation 0 0 0 0
+            scale 0.01 0.01 0.01
+            rotation -1 0 0 1.6
+            children Inline {
+              url "spacedish_full.WRL" 
+            }
+          }
+        }
+        Transform {
+          scale 0.3 0.3 0.3
+          rotation -1 0 0 1.7
+          children Transform {
+            scale 0.01 0.01 0.01
+            rotation 1 0 0 0
+            children Inline {
+              url "spacedish_spacestuff.WRL" 
+            }
+          }
+        }
+      ]
     }
   ]
 }

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.152"
+    ComputedModelVersion    "1.1"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -26,9 +26,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "Urzzza"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Dec 01 13:51:10 2011"
-  RTWModifiedTimeStamp	  244646637
-  ModelVersionFormat	  "1.%<AutoIncrement:152>"
+  LastModifiedDate	  "Sun Dec 04 15:36:17 2011"
+  RTWModifiedTimeStamp	  244913702
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -864,7 +864,7 @@ Model {
   }
   System {
     Name		    "ModelProd"
-    Location		    [2, 74, 1661, 972]
+    Location		    [2, 82, 1347, 698]
     Open		    on
     ModelBrowserVisibility  off
     ModelBrowserWidth	    200
@@ -878,7 +878,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    "537"
+    SIDHighWatermark	    "542"
     Block {
       BlockType		      Sum
       Name		      "Add"
@@ -904,8 +904,8 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Atmosphere"
-	Location		[693, 82, 1356, 699]
-	Open			off
+	Location		[463, 50, 1130, 720]
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -1212,7 +1212,7 @@ Model {
       RTWMemSecDataParameters "Inherit from model"
       GeneratePreprocessorConditionals off
       relop		      "<="
-      const		      "3970e3"
+      const		      "3800e3"
       LogicOutDataTypeMode    "uint8"
       ZeroCross		      on
     }
@@ -1235,7 +1235,7 @@ Model {
       RTWMemSecDataParameters "Inherit from model"
       GeneratePreprocessorConditionals off
       relop		      "<="
-      const		      "3650e3"
+      const		      "3450e3"
       LogicOutDataTypeMode    "uint8"
       ZeroCross		      on
     }
@@ -1251,7 +1251,7 @@ Model {
       Name		      "Constant1"
       SID		      "239"
       Position		      [190, 680, 220, 710]
-      Value		      "7"
+      Value		      "6"
     }
     Block {
       BlockType		      Constant
@@ -1264,7 +1264,7 @@ Model {
       BlockType		      Constant
       Name		      "Constant3"
       SID		      "471"
-      Position		      [1315, 640, 1345, 670]
+      Position		      [1425, 655, 1455, 685]
       Value		      "[0 0 0]"
     }
     Block {
@@ -1365,24 +1365,10 @@ Model {
     }
     Block {
       BlockType		      From
-      Name		      "From13"
-      SID		      "529"
-      Position		      [745, 81, 785, 109]
-      GotoTag		      "ax"
-    }
-    Block {
-      BlockType		      From
       Name		      "From14"
       SID		      "467"
       Position		      [1430, 866, 1470, 894]
       GotoTag		      "a_atm"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From15"
-      SID		      "530"
-      Position		      [745, 131, 785, 159]
-      GotoTag		      "ay"
     }
     Block {
       BlockType		      From
@@ -1430,15 +1416,8 @@ Model {
       BlockType		      From
       Name		      "From21"
       SID		      "505"
-      Position		      [1260, 597, 1355, 623]
+      Position		      [1270, 597, 1365, 623]
       GotoTag		      "using_parachute"
-    }
-    Block {
-      BlockType		      From
-      Name		      "From22"
-      SID		      "531"
-      Position		      [745, 181, 785, 209]
-      GotoTag		      "az"
     }
     Block {
       BlockType		      From
@@ -1446,6 +1425,20 @@ Model {
       SID		      "534"
       Position		      [285, 746, 325, 774]
       GotoTag		      "V"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From24"
+      SID		      "539"
+      Position		      [1680, 612, 1755, 638]
+      GotoTag		      "using_engine"
+    }
+    Block {
+      BlockType		      From
+      Name		      "From25"
+      SID		      "540"
+      Position		      [1270, 637, 1345, 663]
+      GotoTag		      "using_engine"
     }
     Block {
       BlockType		      From
@@ -1511,7 +1504,7 @@ Model {
       Name		      "Gain2"
       SID		      "330"
       Position		      [440, 745, 470, 775]
-      Gain		      "-6"
+      Gain		      "-8.35"
       ParamDataTypeStr	      "Inherit: Inherit via internal rule"
       OutDataTypeStr	      "Inherit: Inherit via internal rule"
       SaturateOnIntegerOverflow	off
@@ -1552,14 +1545,6 @@ Model {
     }
     Block {
       BlockType		      Goto
-      Name		      "Goto11"
-      SID		      "533"
-      Position		      [920, 130, 960, 160]
-      GotoTag		      "asum"
-      TagVisibility	      "local"
-    }
-    Block {
-      BlockType		      Goto
       Name		      "Goto2"
       SID		      "127"
       Position		      [905, 545, 945, 575]
@@ -1578,7 +1563,7 @@ Model {
       BlockType		      Goto
       Name		      "Goto4"
       SID		      "209"
-      Position		      [1055, 241, 1160, 269]
+      Position		      [1055, 242, 1120, 268]
       GotoTag		      "V"
       TagVisibility	      "local"
     }
@@ -1683,16 +1668,6 @@ Model {
       DisplayOption	      "bar"
     }
     Block {
-      BlockType		      Mux
-      Name		      "Mux6"
-      SID		      "532"
-      Ports		      [3, 1]
-      Position		      [870, 93, 875, 197]
-      ShowName		      off
-      Inputs		      "3"
-      DisplayOption	      "bar"
-    }
-    Block {
       BlockType		      Reference
       Name		      "Normalize Vector"
       SID		      "241"
@@ -1739,9 +1714,10 @@ Model {
       Ports		      [1]
       Position		      [265, 409, 295, 441]
       Floating		      off
-      Location		      [86, 227, 962, 682]
+      Location		      [88, 227, 964, 682]
       Open		      on
       NumInputPorts	      "1"
+      ZoomMode		      "xonly"
       List {
 	ListType		AxesTitles
 	axes1			"%<SignalLabel>"
@@ -2363,7 +2339,7 @@ Model {
       MaskHideContents	      off
       System {
 	Name			"Subsystem3"
-	Location		[542, 314, 1669, 849]
+	Location		[10, 111, 1014, 699]
 	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
@@ -2506,7 +2482,7 @@ Model {
 	  Ports			  [1]
 	  Position		  [590, 234, 620, 266]
 	  Floating		  off
-	  Location		  [157, 218, 844, 676]
+	  Location		  [231, 129, 918, 587]
 	  Open			  on
 	  NumInputPorts		  "1"
 	  List {
@@ -2889,6 +2865,17 @@ Model {
       }
     }
     Block {
+      BlockType		      Sum
+      Name		      "Subtract"
+      SID		      "541"
+      Ports		      [2, 1]
+      Position		      [1415, 602, 1445, 633]
+      Inputs		      "+-"
+      InputSameDT	      off
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
       BlockType		      Switch
       Name		      "Switch"
       SID		      "256"
@@ -2930,17 +2917,17 @@ Model {
       BlockType		      Reference
       Name		      "VR Sink"
       SID		      "205"
-      Ports		      [4]
-      Position		      [1715, 487, 1810, 563]
+      Ports		      [5]
+      Position		      [1780, 492, 1875, 568]
       LibraryVersion	      "1.241"
       SourceBlock	      "vrlib/VR Sink"
       SourceType	      "Virtual Reality Sink"
-      SampleTime	      "0.2"
+      SampleTime	      "0.8"
       ViewEnable	      on
       RemoteChange	      off
       RemoteView	      on
       FieldsWritten	      "Ship.rotation.4.1.1.double#Ship.translation.3.1.1.double#parachute.scale.3.1.1.double#light"
-      ".intensity.1.1.1.double"
+      ".intensity.1.1.1.double#switch.whichChoice.1.1.1.double"
       WorldFileName	      "vrplanets.wrl"
       WorldDescription	      "Planets"
       AutoView		      off
@@ -2987,6 +2974,30 @@ Model {
     }
     Block {
       BlockType		      Reference
+      Name		      "XY Graph"
+      SID		      "542"
+      Ports		      [2]
+      Position		      [480, 180, 510, 215]
+      LibraryVersion	      "1.236"
+      SourceBlock	      "simulink/Sinks/XY Graph"
+      SourceType	      "XY scope."
+      ShowPortLabels	      "FromPortIcon"
+      SystemSampleTime	      "-1"
+      FunctionWithSeparateData off
+      RTWMemSecFuncInitTerm   "Inherit from model"
+      RTWMemSecFuncExecute    "Inherit from model"
+      RTWMemSecDataConstants  "Inherit from model"
+      RTWMemSecDataInternal   "Inherit from model"
+      RTWMemSecDataParameters "Inherit from model"
+      GeneratePreprocessorConditionals off
+      xmin		      "-3700e3"
+      xmax		      "0"
+      ymin		      "-3700e3"
+      ymax		      "0"
+      st		      "-1"
+    }
+    Block {
+      BlockType		      Reference
       Name		      "Zonal Harmonic Gravity Model"
       SID		      "154"
       Ports		      [1, 1]
@@ -3018,7 +3029,7 @@ Model {
       Ports		      [3]
       Position		      [645, 214, 675, 246]
       Floating		      off
-      Location		      [599, 299, 1653, 862]
+      Location		      [307, 199, 1361, 762]
       Open		      off
       NumInputPorts	      "3"
       ZoomMode		      "yonly"
@@ -3065,7 +3076,7 @@ Model {
       Position		      [405, 214, 435, 246]
       Floating		      off
       Location		      [152, 123, 859, 691]
-      Open		      on
+      Open		      off
       NumInputPorts	      "3"
       List {
 	ListType		AxesTitles
@@ -3073,8 +3084,8 @@ Model {
 	axes2			"%<SignalLabel>"
 	axes3			"%<SignalLabel>"
       }
-      YMin		      "-3.18895e+006~-1.97151e+006~25.7789"
-      YMax		      "-3.18894e+006~-1.97151e+006~25.779"
+      YMin		      "-3.18895e+006~-2.07009e+006~25.7789"
+      YMax		      "-3.18894e+006~-1.87293e+006~25.779"
       DataFormat	      "StructureWithTime"
       SampleTime	      "0"
     }
@@ -3181,14 +3192,30 @@ Model {
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      1
-      DstBlock		      "coordinats"
-      DstPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"coordinats"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -30]
+	DstBlock		"XY Graph"
+	DstPort			1
+      }
     }
     Line {
       SrcBlock		      "Demux1"
       SrcPort		      2
-      DstBlock		      "coordinats"
-      DstPort		      2
+      Points		      [30, 0]
+      Branch {
+	DstBlock		"coordinats"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -25]
+	DstBlock		"XY Graph"
+	DstPort			2
+      }
     }
     Line {
       SrcBlock		      "Demux1"
@@ -3430,7 +3457,7 @@ Model {
 	DstPort			1
       }
       Branch {
-	Points			[315, 0; 0, 75]
+	Points			[420, 0]
 	DstBlock		"VR Sink"
 	DstPort			1
       }
@@ -3508,16 +3535,9 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Switch"
-      SrcPort		      1
-      Points		      [40, 0; 0, -75]
-      DstBlock		      "VR Sink"
-      DstPort		      3
-    }
-    Line {
       SrcBlock		      "Constant3"
       SrcPort		      1
-      Points		      [195, 0]
+      Points		      [85, 0]
       DstBlock		      "Switch"
       DstPort		      3
     }
@@ -3527,12 +3547,6 @@ Model {
       Points		      [195, 0]
       DstBlock		      "Switch"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From21"
-      SrcPort		      1
-      DstBlock		      "Switch"
-      DstPort		      2
     }
     Line {
       SrcBlock		      "Subsystem4"
@@ -3584,24 +3598,31 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Add"
+      SrcBlock		      "From18"
       SrcPort		      1
-      Points		      [5, 0; 0, -60]
-      DstBlock		      "Switch2"
+      Points		      [35, 0; 0, -40]
+      DstBlock		      "Switch3"
       DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Gain2"
+      SrcPort		      1
+      Points		      [10, 0; 0, -180]
+      DstBlock		      "Switch3"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Switch2"
       SrcPort		      1
-      Points		      [20, 0]
-      Branch {
-	Points			[0, -165]
-	DstBlock		"VR Sink"
-	DstPort			4
-      }
+      Points		      [5, 0]
       Branch {
 	DstBlock		"Scope5"
 	DstPort			1
+      }
+      Branch {
+	Points			[0, -175]
+	DstBlock		"VR Sink"
+	DstPort			4
       }
     }
     Line {
@@ -3618,44 +3639,45 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "From18"
+      SrcBlock		      "Add"
       SrcPort		      1
-      Points		      [35, 0; 0, -40]
-      DstBlock		      "Switch3"
+      Points		      [5, 0; 0, -60]
+      DstBlock		      "Switch2"
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Gain2"
+      SrcBlock		      "Switch"
       SrcPort		      1
-      Points		      [10, 0; 0, -180]
-      DstBlock		      "Switch3"
-      DstPort		      1
-    }
-    Line {
-      SrcBlock		      "From15"
-      SrcPort		      1
-      DstBlock		      "Mux6"
-      DstPort		      2
-    }
-    Line {
-      SrcBlock		      "From22"
-      SrcPort		      1
-      Points		      [30, 0; 0, -15]
-      DstBlock		      "Mux6"
+      Points		      [25, 0; 0, -80]
+      DstBlock		      "VR Sink"
       DstPort		      3
     }
     Line {
-      SrcBlock		      "From13"
+      SrcBlock		      "From24"
       SrcPort		      1
-      Points		      [30, 0; 0, 15]
-      DstBlock		      "Mux6"
+      Points		      [0, -65]
+      DstBlock		      "VR Sink"
+      DstPort		      5
+    }
+    Line {
+      SrcBlock		      "From21"
+      SrcPort		      1
+      DstBlock		      "Subtract"
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Mux6"
+      SrcBlock		      "From25"
       SrcPort		      1
-      DstBlock		      "Goto11"
-      DstPort		      1
+      Points		      [25, 0; 0, -25]
+      DstBlock		      "Subtract"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Subtract"
+      SrcPort		      1
+      Points		      [45, 0; 0, -10]
+      DstBlock		      "Switch"
+      DstPort		      2
     }
     Annotation {
       Position		      [591, 152]
